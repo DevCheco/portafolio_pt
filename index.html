@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevCheco</title>
+    <meta name="description" content="Digital Craftsman ( Artist / Developer / Designer )">
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </noscript>
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fa fa-code" aria-hidden="true"></i>
+                <span>DevCheco</span>
+            </div>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#works" title="Resumen"><i class="fa-regular fa-file"></i></a></li>
+                <li><a href="#experience">Experiencia</a></li>
+                <li><a href="#education">Educación</a></li>
+                <li><a href="#hard-skills">Hard Skills</a></li>
+                <li><a href="#soft-skills">Soft Skills</a></li>
+                <li><a href="#proyectos" title="Proyectos"><i class="fa-solid fa-code"></i></a></li>
+                <li><a href="#datos-de-interes" title="Datos de interés"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-sun"></i>
+            </button>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-illustration">
+                    <div class="terminal-container" id="terminalContainer">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="terminal-btn close"></span>
+                                <span class="terminal-btn minimize"></span>
+                                <span class="terminal-btn maximize"></span>
+                            </div>
+                            <div class="terminal-title">devcheco@portfolio:~$</div>
+                        </div>
+                        <div class="terminal-body" id="terminalBody">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">devcheco@portafolio:~$</span>
+                                <span class="terminal-text"> figlet -f banner "DevCheco"</span>
+                            </div>
+                            <div class="terminal-output">
+                                <div class="terminal-banner">DevCheco</div>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">devcheco@portafolio:~$</span>
+                                <span class="terminal-text"> echo "Bienvenido a mi portafolio! �"</span>
+                            </div>
+                            <div class="terminal-output">
+                                <p class="terminal-welcome">Bienvenido a mi portafolio! �</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-intro">
+                    <p class="greeting">¡Hola! Soy Ingeniero de Sistemas y Técnico en Desarrollo de Software
+                        Colombiano, apasionado por crear soluciones innovadoras.</p>
+                </div>
+
+                <div class="hero-header">
+                    <div class="hero-text">
+                        <h1 class="hero-name">Pedro Tomas Pacheco Pérez</h1>
+                        <p class="hero-title">Ingeniero de Sistemas | Desarrollador de Software</p>
+                    </div>
+                    <div class="hero-avatar">
+                        <img src="assets/linkedin-foto.jpg" alt="Profile picture" class="avatar-img">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Work Section -->
+            <section class="section work-section" id="works">
+                <h2 class="section-title">Resumen</h2>
+                <div class="section-content">
+                    <p class="work-description">
+                        Ingeniero de Sistemas, graduado de la UNAD, con formación técnica en Programación
+                        de Software del SENA. Desarrollador full-stack con experiencia en diseño, desarrollo
+                        e implementación de soluciones tecnológicas. Especializado en desarrollo web frontend
+                        con HTML, CSS, JavaScript, React y Tailwind CSS. Apasionado por crear soluciones
+                        innovadoras, con enfoque en aprendizaje continuo y aporte de valor a través del
+                        código.
+                    </p>
+                    <div class="cta-button-wrapper">
+                        <a target="_blank" href="/pdf/CV_Pedro_Pacheco.pdf" class="btn-primary" id="portfolioBtn">
+                            Mi portafolio <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="section experience-section" id="experience">
+                <h2 class="section-title">Experiencia</h2>
+                <div class="section-content">
+                    <div class="experience-timeline">
+                        <!-- UNAD - Líder Estudiantil -->
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div class="experience-title-group">
+                                    <h3 class="experience-role">Líder Estudiantil - Semillero de Investigación JOKMAH
+                                    </h3>
+                                    <p class="experience-company">Universidad Nacional Abierta y a Distancia (UNAD)</p>
+                                </div>
+                                <div class="experience-meta">
+                                    <span class="experience-period">Enero 2022 – Febrero 2025</span>
+                                    <span class="experience-location">Córdoba, Colombia</span>
+                                </div>
+                            </div>
+                            <ul class="experience-achievements">
+                                <li><i class="fas fa-trophy"></i> Primer lugar Rally Latinoamericano de Innovación 2023
+                                    (100+ equipos, 10 países)</li>
+                                <li><i class="fas fa-chart-line"></i> Incrementé participación del semillero en 20%
+                                    capacitando 10+ estudiantes</li>
+                                <li><i class="fas fa-laptop-code"></i> Desarrollé plataforma web de evaluación
+                                    psicológica (200+ usuarios primer mes)</li>
+                            </ul>
+                        </div>
+
+                        <!-- UNAD - Proyecto Aplicado -->
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div class="experience-title-group">
+                                    <h3 class="experience-role">Proyecto Aplicado - Opción de Grado</h3>
+                                    <p class="experience-company">Universidad Nacional Abierta y a Distancia (UNAD)</p>
+                                </div>
+                                <div class="experience-meta">
+                                    <span class="experience-period">Julio 2024 – Diciembre 2024</span>
+                                    <span class="experience-location">Córdoba, Colombia</span>
+                                </div>
+                            </div>
+                            <ul class="experience-achievements">
+                                <li><i class="fas fa-robot"></i> Asistente virtual IA para detección de
+                                    depresión/ansiedad en estudiantes</li>
+                                <li><i class="fas fa-bolt"></i> Optimización NLP/ML: 40% más rápido, 90% precisión en
+                                    recomendaciones</li>
+                                <li><i class="fas fa-database"></i> Modelo entrenado con 100K+ interacciones, reducción
+                                    50% tiempo de espera</li>
+                            </ul>
+                        </div>
+
+                        <!-- Freelance -->
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div class="experience-title-group">
+                                    <h3 class="experience-role">Desarrollador Frontend Junior</h3>
+                                    <p class="experience-company">Freelance</p>
+                                </div>
+                                <div class="experience-meta">
+                                    <span class="experience-period">Enero 2024 – Febrero 2025</span>
+                                    <span class="experience-location">Córdoba, Colombia</span>
+                                </div>
+                            </div>
+                            <ul class="experience-achievements">
+                                <li><i class="fas fa-rocket"></i> Sitio web barbería: 45% mejora velocidad de carga</li>
+                                <li><i class="fas fa-mobile-alt"></i> Diseño UX/accesibilidad: 40% aumento conversión de
+                                    clientes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bio Section -->
+            <section class="section bio-section" id="education">
+                <h2 class="section-title">Educación</h2>
+                <div class="section-content">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">2020 - 2025</span>
+                            <span class="timeline-text">Ingeniería de Sistemas - Universidad Nacional Abierta y a
+                                Distancia (UNAD)</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2024 - 2025</span>
+                            <span class="timeline-text">Técnico en Programación de Software - Servicio Nacional de
+                                Aprendizaje (SENA)</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2024</span>
+                            <span class="timeline-text">Programador Web Frontend - One Oracle Next Education</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2023</span>
+                            <span class="timeline-text">Programador Web PHP - Servicio Nacional de Aprendizaje
+                                (SENA)</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2007 - 2018</span>
+                            <span class="timeline-text">Bachiller Académico - Institución Educativa San José</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hard Skills Section -->
+            <section class="section skills-section" id="hard-skills">
+                <h2 class="section-title">Hard Skills</h2>
+                <div class="section-content">
+                    <div class="keyboard-container">
+                        <!-- Row 1: Function Keys -->
+                        <div class="keyboard-row">
+                            <div class="keyboard-key key-esc" data-skill="Esc">
+                                <span class="key-main">Esc</span>
+                            </div>
+                            <div class="keyboard-key key-fn" data-skill="HTML">
+                                <i class="fab fa-html5"></i>
+                                <span class="key-sub">F1</span>
+                            </div>
+                            <div class="keyboard-key key-fn" data-skill="CSS">
+                                <i class="fab fa-css3-alt"></i>
+                                <span class="key-sub">F2</span>
+                            </div>
+                            <div class="keyboard-key key-fn" data-skill="JavaScript">
+                                <i class="fab fa-js"></i>
+                                <span class="key-sub">F3</span>
+                            </div>
+                            <div class="keyboard-key key-fn" data-skill="React">
+                                <i class="fab fa-react"></i>
+                                <span class="key-sub">F4</span>
+                            </div>
+                            <div class="keyboard-key key-fn" data-skill="Node.js">
+                                <i class="fab fa-node-js"></i>
+                                <span class="key-sub">F5</span>
+                            </div>
+                            <div class="keyboard-key key-fn" data-skill="Python">
+                                <i class="fab fa-python"></i>
+                                <span class="key-sub">F6</span>
+                            </div>
+                            <div class="keyboard-key key-fn" data-skill="PHP">
+                                <i class="fab fa-php"></i>
+                                <span class="key-sub">F7</span>
+                            </div>
+                            <div class="keyboard-key key-fn" data-skill="MySQL">
+                                <i class="fas fa-database"></i>
+                                <span class="key-sub">F8</span>
+                            </div>
+                            <div class="keyboard-key key-fn" data-skill="Git">
+                                <i class="fab fa-git-alt"></i>
+                                <span class="key-sub">F9</span>
+                            </div>
+                            <div class="keyboard-key key-fn" data-skill="GitHub">
+                                <i class="fab fa-github"></i>
+                                <span class="key-sub">F10</span>
+                            </div>
+                            <div class="keyboard-key key-fn" data-skill="Bootstrap">
+                                <i class="fab fa-bootstrap"></i>
+                                <span class="key-sub">F11</span>
+                            </div>
+                            <div class="keyboard-key key-fn" data-skill="Tailwind CSS">
+                                <i class="fas fa-wind"></i>
+                                <span class="key-sub">F12</span>
+                            </div>
+                            <div class="keyboard-key key-special" data-skill="Delete">
+                                <span class="key-main">Del</span>
+                            </div>
+                        </div>
+
+                        <!-- Row 2: Number Row -->
+                        <div class="keyboard-row">
+                            <div class="keyboard-key key-modifier" data-skill="Debugging">
+                                <span class="key-main">~</span>
+                                <span class="key-sub">`</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Express.js">
+                                <i class="fas fa-server"></i>
+                                <span class="key-sub">1</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="REST API">
+                                <i class="fas fa-exchange-alt"></i>
+                                <span class="key-sub">2</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="JSON">
+                                <i class="fas fa-code"></i>
+                                <span class="key-sub">3</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="MongoDB">
+                                <i class="fas fa-leaf"></i>
+                                <span class="key-sub">4</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="PostgreSQL">
+                                <i class="fas fa-server"></i>
+                                <span class="key-sub">5</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Responsive Design">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span class="key-sub">6</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="VS Code">
+                                <i class="fas fa-code"></i>
+                                <span class="key-sub">7</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="npm">
+                                <i class="fab fa-npm"></i>
+                                <span class="key-sub">8</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Postman">
+                                <i class="fas fa-paper-plane"></i>
+                                <span class="key-sub">9</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Figma">
+                                <i class="fab fa-figma"></i>
+                                <span class="key-sub">0</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Linux">
+                                <i class="fab fa-linux"></i>
+                                <span class="key-sub">-</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Markdown">
+                                <i class="fab fa-markdown"></i>
+                                <span class="key-sub">=</span>
+                            </div>
+                            <div class="keyboard-key key-backspace" data-skill="Backspace">
+                                <span class="key-main">⌫</span>
+                            </div>
+                        </div>
+
+                        <!-- Row 3: QWERTY Row -->
+                        <div class="keyboard-row">
+                            <div class="keyboard-key key-tab" data-skill="Tab">
+                                <span class="key-main">Tab</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="jQuery">
+                                <i class="fas fa-code"></i>
+                                <span class="key-sub">Q</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Webpack">
+                                <i class="fas fa-cube"></i>
+                                <span class="key-sub">W</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="ESLint">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="key-sub">E</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Regex">
+                                <i class="fas fa-code"></i>
+                                <span class="key-sub">R</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Testing">
+                                <i class="fas fa-vial"></i>
+                                <span class="key-sub">T</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="YAML">
+                                <i class="fas fa-file-code"></i>
+                                <span class="key-sub">Y</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Ubuntu">
+                                <i class="fab fa-ubuntu"></i>
+                                <span class="key-sub">U</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Insomnia">
+                                <i class="fas fa-moon"></i>
+                                <span class="key-sub">I</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="OOP">
+                                <i class="fas fa-object-group"></i>
+                                <span class="key-sub">O</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Prettier">
+                                <i class="fas fa-magic"></i>
+                                <span class="key-sub">P</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Sass/SCSS">
+                                <i class="fab fa-sass"></i>
+                                <span class="key-sub">[</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="XML">
+                                <i class="fas fa-code"></i>
+                                <span class="key-sub">]</span>
+                            </div>
+                            <div class="keyboard-key key-backslash" data-skill="Bash">
+                                <i class="fas fa-terminal"></i>
+                                <span class="key-sub">\</span>
+                            </div>
+                        </div>
+
+                        <!-- Row 4: ASDF Row -->
+                        <div class="keyboard-row">
+                            <div class="keyboard-key key-caps" data-skill="Caps Lock">
+                                <span class="key-main">Caps</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Agile">
+                                <i class="fas fa-sync-alt"></i>
+                                <span class="key-sub">A</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Scrum">
+                                <i class="fas fa-users-cog"></i>
+                                <span class="key-sub">S</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Docker">
+                                <i class="fab fa-docker"></i>
+                                <span class="key-sub">D</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Flexbox">
+                                <i class="fas fa-th"></i>
+                                <span class="key-sub">F</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Grid CSS">
+                                <i class="fas fa-th-large"></i>
+                                <span class="key-sub">G</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Heroku">
+                                <i class="fas fa-cloud"></i>
+                                <span class="key-sub">H</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Jest">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="key-sub">J</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Kanban">
+                                <i class="fas fa-columns"></i>
+                                <span class="key-sub">K</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Localhost">
+                                <i class="fas fa-laptop-code"></i>
+                                <span class="key-sub">L</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="MVC">
+                                <i class="fas fa-sitemap"></i>
+                                <span class="key-sub">;</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="CRUD">
+                                <i class="fas fa-database"></i>
+                                <span class="key-sub">'</span>
+                            </div>
+                            <div class="keyboard-key key-enter" data-skill="Enter">
+                                <span class="key-main">↵</span>
+                            </div>
+                        </div>
+
+                        <!-- Row 5: ZXCV Row -->
+                        <div class="keyboard-row">
+                            <div class="keyboard-key key-shift" data-skill="Shift">
+                                <span class="key-main">⇧</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Vite">
+                                <i class="fas fa-bolt"></i>
+                                <span class="key-sub">Z</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="XAMPP">
+                                <i class="fas fa-server"></i>
+                                <span class="key-sub">X</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Chrome DevTools">
+                                <i class="fab fa-chrome"></i>
+                                <span class="key-sub">C</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Vercel">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span class="key-sub">V</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Babel">
+                                <i class="fas fa-language"></i>
+                                <span class="key-sub">B</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Netlify">
+                                <i class="fas fa-cloud"></i>
+                                <span class="key-sub">N</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Material-UI">
+                                <i class="fas fa-palette"></i>
+                                <span class="key-sub">M</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="SEO">
+                                <i class="fas fa-search"></i>
+                                <span class="key-sub">,</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Performance">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span class="key-sub">.</span>
+                            </div>
+                            <div class="keyboard-key" data-skill="Security">
+                                <i class="fas fa-shield-alt"></i>
+                                <span class="key-sub">/</span>
+                            </div>
+                            <div class="keyboard-key key-shift-right" data-skill="Shift">
+                                <span class="key-main">⇧</span>
+                            </div>
+                        </div>
+
+                        <!-- Row 6: Bottom Row -->
+                        <div class="keyboard-row">
+                            <div class="keyboard-key key-ctrl" data-skill="Ctrl">
+                                <span class="key-main">Ctrl</span>
+                            </div>
+                            <div class="keyboard-key key-win" data-skill="Win">
+                                <span class="key-main">Win</span>
+                            </div>
+                            <div class="keyboard-key key-alt" data-skill="Alt">
+                                <span class="key-main">Alt</span>
+                            </div>
+                            <div class="keyboard-key key-space" data-skill="Full Stack Development">
+                                <span class="key-brand">Full Stack Developer</span>
+                            </div>
+                            <div class="keyboard-key key-alt" data-skill="Alt Gr">
+                                <span class="key-main">Alt</span>
+                            </div>
+                            <div class="keyboard-key key-fn-bottom" data-skill="Fn">
+                                <span class="key-main">Fn</span>
+                            </div>
+                            <div class="keyboard-key key-ctrl" data-skill="Ctrl">
+                                <span class="key-main">Ctrl</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Soft Skills Section -->
+            <section class="section soft-skills-section" id="soft-skills">
+                <h2 class="section-title">Habilidades Blandas</h2>
+                <div class="section-content">
+                    <div class="skills-accordion">
+                        <!-- Category 1: Comunicación e Interacción -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <div class="header-left">
+                                    <span class="header-icon"><i class="fas fa-comments"></i></span>
+                                    <span class="header-title">Comunicación e Interacción</span>
+                                </div>
+                                <span class="header-chevron"><i class="fas fa-chevron-down"></i></span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="skills-list-compact">
+                                    <div class="skill-tag" title="Transmito ideas técnicas de forma clara"><i
+                                            class="fas fa-comment-dots"></i> Comunicación Efectiva</div>
+                                    <div class="skill-tag" title="Comprendo requisitos y feedback"><i
+                                            class="fas fa-ear-listen"></i> Escucha Activa</div>
+                                    <div class="skill-tag" title="Comprendo las necesidades del usuario"><i
+                                            class="fas fa-heart"></i> Empatía</div>
+                                    <div class="skill-tag" title="Encuentro soluciones beneficiosas"><i
+                                            class="fas fa-handshake"></i> Negociación</div>
+                                    <div class="skill-tag" title="Explico conceptos a audiencias diversas"><i
+                                            class="fas fa-microphone"></i> Presentaciones Técnicas</div>
+                                    <div class="skill-tag" title="Documento código y procesos claramente"><i
+                                            class="fas fa-file-alt"></i> Documentación Técnica</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category 2: Liderazgo y Colaboración -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <div class="header-left">
+                                    <span class="header-icon"><i class="fas fa-users"></i></span>
+                                    <span class="header-title">Liderazgo y Colaboración</span>
+                                </div>
+                                <span class="header-chevron"><i class="fas fa-chevron-down"></i></span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="skills-list-compact">
+                                    <div class="skill-tag" title="Colaboro efectivamente en equipos"><i
+                                            class="fas fa-users-cog"></i> Trabajo en Equipo</div>
+                                    <div class="skill-tag" title="Guío equipos hacia objetivos comunes"><i
+                                            class="fas fa-crown"></i> Liderazgo</div>
+                                    <div class="skill-tag" title="Trabajo efectivamente en equipos distribuidos"><i
+                                            class="fas fa-globe"></i> Colaboración Remota</div>
+                                    <div class="skill-tag" title="Comparto conocimientos"><i
+                                            class="fas fa-chalkboard-teacher"></i> Mentoría</div>
+                                    <div class="skill-tag" title="Resuelvo desacuerdos constructivamente"><i
+                                            class="fas fa-balance-scale"></i> Resolución de Conflictos</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category 3: Pensamiento Estratégico -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <div class="header-left">
+                                    <span class="header-icon"><i class="fas fa-brain"></i></span>
+                                    <span class="header-title">Pensamiento Estratégico</span>
+                                </div>
+                                <span class="header-chevron"><i class="fas fa-chevron-down"></i></span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="skills-list-compact">
+                                    <div class="skill-tag" title="Analizo y resuelvo desafíos"><i
+                                            class="fas fa-lightbulb"></i> Resolución de Problemas</div>
+                                    <div class="skill-tag" title="Evalúo desde múltiples perspectivas"><i
+                                            class="fas fa-chess"></i> Pensamiento Crítico</div>
+                                    <div class="skill-tag" title="Descompongo problemas complejos"><i
+                                            class="fas fa-chart-bar"></i> Pensamiento Analítico</div>
+                                    <div class="skill-tag" title="Propongo soluciones innovadoras"><i
+                                            class="fas fa-paint-brush"></i> Creatividad</div>
+                                    <div class="skill-tag" title="Busco mejores formas de hacer las cosas"><i
+                                            class="fas fa-sparkles"></i> Innovación</div>
+                                    <div class="skill-tag" title="Decido con criterio"><i class="fas fa-gavel"></i> Toma
+                                        de Decisiones</div>
+                                    <div class="skill-tag" title="Pienso a largo plazo"><i class="fas fa-compass"></i>
+                                        Visión Estratégica</div>
+                                    <div class="skill-tag" title="Cuido la calidad"><i class="fas fa-search-plus"></i>
+                                        Atención al Detalle</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category 4: Gestión y Eficiencia -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <div class="header-left">
+                                    <span class="header-icon"><i class="fas fa-rocket"></i></span>
+                                    <span class="header-title">Gestión y Eficiencia</span>
+                                </div>
+                                <span class="header-chevron"><i class="fas fa-chevron-down"></i></span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="skills-list-compact">
+                                    <div class="skill-tag" title="Priorizo tareas y deadlines"><i
+                                            class="fas fa-hourglass-half"></i> Gestión del Tiempo</div>
+                                    <div class="skill-tag" title="Organizo mi trabajo independientemente"><i
+                                            class="fas fa-clipboard-check"></i> Autogestión</div>
+                                    <div class="skill-tag" title="Anticipo necesidades"><i class="fas fa-running"></i>
+                                        Proactividad</div>
+                                    <div class="skill-tag" title="Me enfoco en lograr objetivos"><i
+                                            class="fas fa-bullseye"></i> Orientación a Resultados</div>
+                                    <div class="skill-tag" title="Me adapto a nuevas tecnologías"><i
+                                            class="fas fa-sync"></i> Adaptabilidad</div>
+                                    <div class="skill-tag" title="Mantengo la calma bajo presión"><i
+                                            class="fas fa-spa"></i> Manejo del Estrés</div>
+                                    <div class="skill-tag" title="Actualizo mis conocimientos"><i
+                                            class="fas fa-book-reader"></i> Aprendizaje Continuo</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interests Section -->
+            <section class="section interests-section">
+                <h2 class="section-title">Yo ♥</h2>
+                <div class="section-content">
+                    <p class="interests-list">
+                        Programación, <span class="link-accent">Desarrollo Web</span>, Tecnología, <span
+                            class="link-accent">Innovación</span>, Aprendizaje Continuo, Open Source
+                    </p>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="section" id="proyectos">
+                <h2 class="section-title">Proyectos</h2>
+                <div class="section-content">
+
+                    <!-- Subsection: Client Projects -->
+                    <div class="projects-subsection">
+                        <h3 class="subsection-title">Proyectos de Clientes</h3>
+                        <div class="projects-grid">
+                            <!-- Project Card 1 (Client) -->
+                            <div class="project-card" onclick="openGallery('client1')">
+                                <div class="project-image-container">
+                                    <div class="project-placeholder-img"
+                                        style="background: url(/assets/proyecto_1.png);">
+                                        <i class="fas fa-store fa-3x"></i>
+                                    </div>
+                                    <div class="gallery-overlay">
+                                        <i class="fas fa-images"></i> Ver Galería
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h4>E-commerce Multivendedor</h4>
+                                    <p>Proyecto web tipo marketplace desarrollado con PHP, HTML, CSS, JavaScript y
+                                        Bootstrap, utilizando mysql como sistema de base de datos y mysql como
+                                        plataforma backend para la gestión de autenticación, almacenamiento y API REST.
+                                        El propósito del proyecto es construir una arquitectura limpia, modular y
+                                        escalable para la gestión de productos, usuarios y compras, ideal para entornos
+                                        educativos o implementaciones iniciales de comercio electrónico.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subsection: Personal Projects -->
+                    <div class="projects-subsection text-center-mobile">
+                        <h3 class="subsection-title">Proyectos Personales</h3>
+                        <div class="projects-grid">
+                            <!-- Project Card 2 (Personal) -->
+                            <div class="project-card" onclick="openGallery('personal1')">
+                                <div class="project-image-container">
+                                    <div class="project-placeholder-img"
+                                        style="background: linear-gradient(135deg, #88ccca, #2d2d30);">
+                                        <i class="fas fa-code fa-3x"></i>
+                                    </div>
+                                    <div class="gallery-overlay">
+                                        <i class="fas fa-images"></i> Ver Galería
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h4>Portfolio Minimalista</h4>
+                                    <p>Diseño personal enfocado en rendimiento y accesibilidad.</p>
+                                    <a href="#" class="btn-demo" onclick="event.stopPropagation()">
+                                        <i class="fas fa-external-link-alt"></i> Live Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Datos de Interés Section -->
+            <section class="section" id="datos-de-interes">
+                <h2 class="section-title">Datos de interés</h2>
+                <div class="section-content">
+                    <ul class="social-links-list">
+                        <li>
+                            <a href="https://github.com/DevCheco" target="_blank" class="social-list-item">
+                                <i class="fab fa-github"></i>
+                                <span>@DevCheco</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/pachecop%C3%A9rez/" target="_blank"
+                                class="social-list-item">
+                                <i class="fab fa-linkedin"></i>
+                                <span>@PedroPacheco</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="social-list-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>pedrotompachecop@gmail.com</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© <span id="currentYear">2026</span> Pedro Tomas Pacheco Pérez - DevCheco. Todos los
+                derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="gallery-modal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <img class="gallery-image" id="galleryImage" src="" alt="Project Gallery">
+            <div class="gallery-controls">
+                <button class="prev-slide" onclick="changeSlide(-1)">&#10094;</button>
+                <div class="gallery-counter">
+                    <span id="currentSlide">1</span> / <span id="totalSlides">1</span>
+                </div>
+                <button class="next-slide" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+            <div class="gallery-caption" id="galleryCaption"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</body>
+
+</html>
