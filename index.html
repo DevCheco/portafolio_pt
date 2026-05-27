@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
+    <!-- Preload LCP image -->
+    <link rel="preload" as="image" href="assets/linkedin-foto.webp" fetchpriority="high">
+
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
@@ -20,11 +23,20 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    <!-- Font Awesome — solid + brands subsets only (avoids loading unused icon variants) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css"
+        media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css"
+        media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css"
+        media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/regular.min.css"
         media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/regular.min.css">
     </noscript>
 
 </head>
@@ -103,7 +115,8 @@
                         <p class="hero-title">Ingeniero de Sistemas | Desarrollador de Software</p>
                     </div>
                     <div class="hero-avatar">
-                        <img src="assets/linkedin-foto.jpg" alt="Profile picture" class="avatar-img">
+                        <img src="assets/linkedin-foto.webp" alt="Profile picture" class="avatar-img" width="120"
+                            height="120" fetchpriority="high">
                     </div>
                 </div>
             </section>
@@ -545,125 +558,105 @@
                 </div>
             </section>
 
-            <!-- Soft Skills Section -->
+            <!-- Soft Skills Section - Showcase -->
             <section class="section soft-skills-section" id="soft-skills">
                 <h2 class="section-title">Habilidades Blandas</h2>
                 <div class="section-content">
-                    <div class="skills-accordion">
-                        <!-- Category 1: Comunicación e Interacción -->
-                        <div class="accordion-item">
-                            <button class="accordion-header">
-                                <div class="header-left">
-                                    <span class="header-icon"><i class="fas fa-comments"></i></span>
-                                    <span class="header-title">Comunicación e Interacción</span>
-                                </div>
-                                <span class="header-chevron"><i class="fas fa-chevron-down"></i></span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="skills-list-compact">
-                                    <div class="skill-tag" title="Transmito ideas técnicas de forma clara"><i
-                                            class="fas fa-comment-dots"></i> Comunicación Efectiva</div>
-                                    <div class="skill-tag" title="Comprendo requisitos y feedback"><i
-                                            class="fas fa-ear-listen"></i> Escucha Activa</div>
-                                    <div class="skill-tag" title="Comprendo las necesidades del usuario"><i
-                                            class="fas fa-heart"></i> Empatía</div>
-                                    <div class="skill-tag" title="Encuentro soluciones beneficiosas"><i
-                                            class="fas fa-handshake"></i> Negociación</div>
-                                    <div class="skill-tag" title="Explico conceptos a audiencias diversas"><i
-                                            class="fas fa-microphone"></i> Presentaciones Técnicas</div>
-                                    <div class="skill-tag" title="Documento código y procesos claramente"><i
-                                            class="fas fa-file-alt"></i> Documentación Técnica</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="sc-wrap ss-wrap">
 
-                        <!-- Category 2: Liderazgo y Colaboración -->
-                        <div class="accordion-item">
-                            <button class="accordion-header">
-                                <div class="header-left">
-                                    <span class="header-icon"><i class="fas fa-users"></i></span>
-                                    <span class="header-title">Liderazgo y Colaboración</span>
-                                </div>
-                                <span class="header-chevron"><i class="fas fa-chevron-down"></i></span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="skills-list-compact">
-                                    <div class="skill-tag" title="Colaboro efectivamente en equipos"><i
-                                            class="fas fa-users-cog"></i> Trabajo en Equipo</div>
-                                    <div class="skill-tag" title="Guío equipos hacia objetivos comunes"><i
-                                            class="fas fa-crown"></i> Liderazgo</div>
-                                    <div class="skill-tag" title="Trabajo efectivamente en equipos distribuidos"><i
-                                            class="fas fa-globe"></i> Colaboración Remota</div>
-                                    <div class="skill-tag" title="Comparto conocimientos"><i
-                                            class="fas fa-chalkboard-teacher"></i> Mentoría</div>
-                                    <div class="skill-tag" title="Resuelvo desacuerdos constructivamente"><i
-                                            class="fas fa-balance-scale"></i> Resolución de Conflictos</div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- === SIDEBAR === -->
+                        <aside class="sc-sidebar ss-sidebar">
+                            <span class="sc-sidebar-label">
+                                <i class="fas fa-brain"></i>
+                                Categorías
+                            </span>
+                            <nav class="sc-nav">
+                                <button class="sc-nav-item active" data-skill-cat="comunicacion">
+                                    <span class="sc-nav-thumb" style="--c:#7c6af7"><i
+                                            class="fas fa-comments"></i></span>
+                                    <div class="sc-nav-meta">
+                                        <span class="sc-nav-name">Comunicación</span>
+                                        <span class="sc-nav-sub">6 habilidades</span>
+                                    </div>
+                                    <i class="fas fa-chevron-right sc-nav-arrow"></i>
+                                </button>
+                                <button class="sc-nav-item" data-skill-cat="liderazgo">
+                                    <span class="sc-nav-thumb" style="--c:#f06a9a"><i class="fas fa-users"></i></span>
+                                    <div class="sc-nav-meta">
+                                        <span class="sc-nav-name">Liderazgo</span>
+                                        <span class="sc-nav-sub">5 habilidades</span>
+                                    </div>
+                                    <i class="fas fa-chevron-right sc-nav-arrow"></i>
+                                </button>
+                                <button class="sc-nav-item" data-skill-cat="pensamiento">
+                                    <span class="sc-nav-thumb" style="--c:#06b6d4"><i
+                                            class="fas fa-lightbulb"></i></span>
+                                    <div class="sc-nav-meta">
+                                        <span class="sc-nav-name">Estrategia</span>
+                                        <span class="sc-nav-sub">8 habilidades</span>
+                                    </div>
+                                    <i class="fas fa-chevron-right sc-nav-arrow"></i>
+                                </button>
+                                <button class="sc-nav-item" data-skill-cat="gestion">
+                                    <span class="sc-nav-thumb" style="--c:#10b981"><i class="fas fa-rocket"></i></span>
+                                    <div class="sc-nav-meta">
+                                        <span class="sc-nav-name">Gestión</span>
+                                        <span class="sc-nav-sub">7 habilidades</span>
+                                    </div>
+                                    <i class="fas fa-chevron-right sc-nav-arrow"></i>
+                                </button>
+                            </nav>
+                        </aside>
 
-                        <!-- Category 3: Pensamiento Estratégico -->
-                        <div class="accordion-item">
-                            <button class="accordion-header">
-                                <div class="header-left">
-                                    <span class="header-icon"><i class="fas fa-brain"></i></span>
-                                    <span class="header-title">Pensamiento Estratégico</span>
-                                </div>
-                                <span class="header-chevron"><i class="fas fa-chevron-down"></i></span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="skills-list-compact">
-                                    <div class="skill-tag" title="Analizo y resuelvo desafíos"><i
-                                            class="fas fa-lightbulb"></i> Resolución de Problemas</div>
-                                    <div class="skill-tag" title="Evalúo desde múltiples perspectivas"><i
-                                            class="fas fa-chess"></i> Pensamiento Crítico</div>
-                                    <div class="skill-tag" title="Descompongo problemas complejos"><i
-                                            class="fas fa-chart-bar"></i> Pensamiento Analítico</div>
-                                    <div class="skill-tag" title="Propongo soluciones innovadoras"><i
-                                            class="fas fa-paint-brush"></i> Creatividad</div>
-                                    <div class="skill-tag" title="Busco mejores formas de hacer las cosas"><i
-                                            class="fas fa-sparkles"></i> Innovación</div>
-                                    <div class="skill-tag" title="Decido con criterio"><i class="fas fa-gavel"></i> Toma
-                                        de Decisiones</div>
-                                    <div class="skill-tag" title="Pienso a largo plazo"><i class="fas fa-compass"></i>
-                                        Visión Estratégica</div>
-                                    <div class="skill-tag" title="Cuido la calidad"><i class="fas fa-search-plus"></i>
-                                        Atención al Detalle</div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- === MAIN PANEL === -->
+                        <div class="sc-panel ss-panel">
 
-                        <!-- Category 4: Gestión y Eficiencia -->
-                        <div class="accordion-item">
-                            <button class="accordion-header">
-                                <div class="header-left">
-                                    <span class="header-icon"><i class="fas fa-rocket"></i></span>
-                                    <span class="header-title">Gestión y Eficiencia</span>
+                            <!-- Floating badge -->
+                            <div class="sc-badge sc-badge-tech ss-badge-count">
+                                <i class="fas fa-star-half-alt"></i>
+                                <span id="ssSkillCount">6 habilidades</span>
+                            </div>
+
+                            <!-- Category hero strip -->
+                            <div class="ss-hero">
+                                <div class="ss-hero-icon" id="ssHeroIcon">
+                                    <i class="fas fa-comments"></i>
                                 </div>
-                                <span class="header-chevron"><i class="fas fa-chevron-down"></i></span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="skills-list-compact">
-                                    <div class="skill-tag" title="Priorizo tareas y deadlines"><i
-                                            class="fas fa-hourglass-half"></i> Gestión del Tiempo</div>
-                                    <div class="skill-tag" title="Organizo mi trabajo independientemente"><i
-                                            class="fas fa-clipboard-check"></i> Autogestión</div>
-                                    <div class="skill-tag" title="Anticipo necesidades"><i class="fas fa-running"></i>
-                                        Proactividad</div>
-                                    <div class="skill-tag" title="Me enfoco en lograr objetivos"><i
-                                            class="fas fa-bullseye"></i> Orientación a Resultados</div>
-                                    <div class="skill-tag" title="Me adapto a nuevas tecnologías"><i
-                                            class="fas fa-sync"></i> Adaptabilidad</div>
-                                    <div class="skill-tag" title="Mantengo la calma bajo presión"><i
-                                            class="fas fa-spa"></i> Manejo del Estrés</div>
-                                    <div class="skill-tag" title="Actualizo mis conocimientos"><i
-                                            class="fas fa-book-reader"></i> Aprendizaje Continuo</div>
+                                <div class="ss-hero-text">
+                                    <h3 class="ss-cat-title" id="ssCatTitle">Comunicación e Interacción</h3>
+                                    <p class="ss-cat-desc" id="ssCatDesc">Habilidades para transmitir ideas con
+                                        claridad, escuchar activamente y conectar con las personas.</p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+
+                            <!-- Skills grid -->
+                            <div class="ss-skills-grid" id="ssSkillsGrid">
+                                <!-- Comunicacion skills (default) -->
+                                <div class="ss-skill-card"><i class="fas fa-comment-dots"></i><strong>Comunicación
+                                        Efectiva</strong><span>Transmito ideas técnicas de forma clara y precisa.</span>
+                                </div>
+                                <div class="ss-skill-card"><i class="fas fa-ear-listen"></i><strong>Escucha
+                                        Activa</strong><span>Comprendo requisitos y feedback sin interrumpir.</span>
+                                </div>
+                                <div class="ss-skill-card"><i
+                                        class="fas fa-heart"></i><strong>Empatía</strong><span>Comprendo las necesidades
+                                        y emociones del usuario.</span></div>
+                                <div class="ss-skill-card"><i
+                                        class="fas fa-handshake"></i><strong>Negociación</strong><span>Encuentro
+                                        soluciones beneficiosas para todas las partes.</span></div>
+                                <div class="ss-skill-card"><i class="fas fa-microphone"></i><strong>Presentaciones
+                                        Técnicas</strong><span>Explico conceptos a audiencias diversas con
+                                        confianza.</span></div>
+                                <div class="ss-skill-card"><i class="fas fa-file-alt"></i><strong>Documentación
+                                        Técnica</strong><span>Documento código y procesos de forma clara y
+                                        estructurada.</span></div>
+                            </div>
+
+                        </div><!-- end ss-panel -->
+                    </div><!-- end ss-wrap -->
                 </div>
             </section>
+
 
             <!-- Interests Section -->
             <section class="section interests-section">
@@ -676,67 +669,153 @@
                 </div>
             </section>
 
-            <!-- Projects Section -->
+            <!-- Projects Section - Interactive Showcase -->
             <section class="section" id="proyectos">
                 <h2 class="section-title">Proyectos</h2>
                 <div class="section-content">
+                    <div class="sc-wrap">
 
-                    <!-- Subsection: Client Projects -->
-                    <div class="projects-subsection">
-                        <h3 class="subsection-title">Proyectos de Clientes</h3>
-                        <div class="projects-grid">
-                            <!-- Project Card 1 (Client) -->
-                            <div class="project-card" onclick="openGallery('client1')">
-                                <div class="project-image-container">
-                                    <div class="project-placeholder-img"
-                                        style="background: url(/assets/proyecto_1.png);">
-                                        <i class="fas fa-store fa-3x"></i>
+                        <!-- === SIDEBAR === -->
+                        <aside class="sc-sidebar">
+                            <span class="sc-sidebar-label">
+                                <i class="fas fa-th-large"></i>
+                                Mis proyectos
+                            </span>
+                            <nav class="sc-nav">
+
+                                <div class="sc-nav-group">
+                                    <span class="sc-nav-group-label">
+                                        <i class="fas fa-briefcase"></i>Clientes
+                                    </span>
+                                    <button class="sc-nav-item active" data-project="client1">
+                                        <span class="sc-nav-thumb" style="--c:#7c6af7">
+                                            <i class="fas fa-store"></i>
+                                        </span>
+                                        <div class="sc-nav-meta">
+                                            <span class="sc-nav-name">E-commerce</span>
+                                            <span class="sc-nav-sub">PHP · MySQL · Bootstrap</span>
+                                        </div>
+                                        <i class="fas fa-chevron-right sc-nav-arrow"></i>
+                                    </button>
+                                </div>
+
+                                <div class="sc-nav-group">
+                                    <span class="sc-nav-group-label">
+                                        <i class="fas fa-user"></i>Personales
+                                    </span>
+                                    <button class="sc-nav-item" data-project="personal1">
+                                        <span class="sc-nav-thumb" style="--c:#06b6d4">
+                                            <i class="fas fa-laptop-code"></i>
+                                        </span>
+                                        <div class="sc-nav-meta">
+                                            <span class="sc-nav-name">Portfolio</span>
+                                            <span class="sc-nav-sub">HTML · CSS · JS</span>
+                                        </div>
+                                        <i class="fas fa-chevron-right sc-nav-arrow"></i>
+                                    </button>
+                                    <button class="sc-nav-item" data-project="medicontrol">
+                                        <span class="sc-nav-thumb" style="--c:#10b981">
+                                            <i class="fas fa-pills"></i>
+                                        </span>
+                                        <div class="sc-nav-meta">
+                                            <span class="sc-nav-name">MediControl</span>
+                                            <span class="sc-nav-sub">PHP · MySQL · CSS</span>
+                                        </div>
+                                        <i class="fas fa-chevron-right sc-nav-arrow"></i>
+                                    </button>
+                                    <button class="sc-nav-item" data-project="thomybot">
+                                        <span class="sc-nav-thumb" style="--c:#f06a9a">
+                                            <i class="fas fa-robot"></i>
+                                        </span>
+                                        <div class="sc-nav-meta">
+                                            <span class="sc-nav-name">ThomyBot AI</span>
+                                            <span class="sc-nav-sub">TensorFlow.js · NLP</span>
+                                        </div>
+                                        <i class="fas fa-chevron-right sc-nav-arrow"></i>
+                                    </button>
+                                </div>
+
+                            </nav>
+                        </aside>
+
+                        <!-- === MAIN PANEL === -->
+                        <div class="sc-panel">
+
+                            <!-- Floating badges -->
+                            <div class="sc-badge sc-badge-tech" id="scBadgeTech">
+                                <i class="fas fa-code"></i>
+                                <span id="scTechText">PHP · MySQL · JS</span>
+                            </div>
+                            <div class="sc-badge sc-badge-type" id="scBadgeType">
+                                <i class="fas fa-tag"></i>
+                                <span id="scTypeText">Cliente</span>
+                            </div>
+                            <div class="sc-badge sc-badge-rating" id="scBadgeRating">
+                                <i class="fas fa-star"></i>
+                                <span id="scRatingText">4.8</span>
+                            </div>
+
+                            <!-- Browser mockup -->
+                            <div class="sc-mockup">
+                                <div class="sc-mockup-bar">
+                                    <div class="sc-dots">
+                                        <span class="dot-r"></span>
+                                        <span class="dot-y"></span>
+                                        <span class="dot-g"></span>
                                     </div>
-                                    <div class="gallery-overlay">
-                                        <i class="fas fa-images"></i> Ver Galería
+                                    <div class="sc-address-bar">
+                                        <i class="fas fa-lock sc-lock-icon"></i>
+                                        <span id="scUrlText">localhost/ecommerce</span>
+                                    </div>
+                                    <div class="sc-mockup-refresh">
+                                        <i class="fas fa-rotate-right"></i>
                                     </div>
                                 </div>
-                                <div class="project-info">
-                                    <h4>E-commerce Multivendedor</h4>
-                                    <p>Proyecto web tipo marketplace desarrollado con PHP, HTML, CSS, JavaScript y
-                                        Bootstrap, utilizando mysql como sistema de base de datos y mysql como
-                                        plataforma backend para la gestión de autenticación, almacenamiento y API REST.
-                                        El propósito del proyecto es construir una arquitectura limpia, modular y
-                                        escalable para la gestión de productos, usuarios y compras, ideal para entornos
-                                        educativos o implementaciones iniciales de comercio electrónico.</p>
+                                <div class="sc-mockup-screen">
+                                    <img id="scScreenImg" src="assets/proyecto_1.webp" alt="Project preview" width="800"
+                                        height="400" loading="lazy" />
+                                    <div class="sc-screen-fade"></div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- Subsection: Personal Projects -->
-                    <div class="projects-subsection text-center-mobile">
-                        <h3 class="subsection-title">Proyectos Personales</h3>
-                        <div class="projects-grid">
-                            <!-- Project Card 2 (Personal) -->
-                            <div class="project-card" onclick="openGallery('personal1')">
-                                <div class="project-image-container">
-                                    <div class="project-placeholder-img"
-                                        style="background: linear-gradient(135deg, #88ccca, #2d2d30);">
-                                        <i class="fas fa-code fa-3x"></i>
-                                    </div>
-                                    <div class="gallery-overlay">
-                                        <i class="fas fa-images"></i> Ver Galería
+                            <!-- Project info row -->
+                            <div class="sc-info">
+                                <div class="sc-info-left">
+                                    <h3 class="sc-title" id="scTitle">E-commerce Multivendedor</h3>
+                                    <p class="sc-desc" id="scDesc">Marketplace modular con gestión de productos,
+                                        usuarios y compras. Arquitectura limpia con PHP, MySQL y API REST.</p>
+                                    <div class="sc-stats">
+                                        <div class="sc-stat">
+                                            <i class="fas fa-layer-group"></i>
+                                            <span id="scStackStat">Full Stack</span>
+                                        </div>
+                                        <div class="sc-stat">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            <span id="scYearStat">2024</span>
+                                        </div>
+                                        <div class="sc-stat">
+                                            <i class="fas fa-users"></i>
+                                            <span id="scUsersStat">200+ usuarios</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="project-info">
-                                    <h4>Portfolio Minimalista</h4>
-                                    <p>Diseño personal enfocado en rendimiento y accesibilidad.</p>
-                                    <a href="#" class="btn-demo" onclick="event.stopPropagation()">
-                                        <i class="fas fa-external-link-alt"></i> Live Demo
+                                <div class="sc-info-actions">
+                                    <button class="sc-btn-gallery" id="scGalleryBtn">
+                                        <i class="fas fa-images"></i>
+                                        <span>Galería</span>
+                                    </button>
+                                    <a class="sc-btn-live" id="scLiveLink" href="#" target="_blank">
+                                        <i class="fas fa-arrow-up-right-from-square"></i>
+                                        <span>Demo</span>
                                     </a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
+                        </div><!-- end sc-panel -->
+                    </div><!-- end sc-wrap -->
                 </div>
             </section>
+
 
             <!-- Datos de Interés Section -->
             <section class="section" id="datos-de-interes">
@@ -780,13 +859,14 @@
     <div id="galleryModal" class="gallery-modal">
         <span class="close-modal">&times;</span>
         <div class="modal-content">
-            <img class="gallery-image" id="galleryImage" src="" alt="Project Gallery">
+            <img class="gallery-image" id="galleryImage" src="" alt="Project Gallery" width="800" height="600"
+                loading="lazy">
             <div class="gallery-controls">
-                <button class="prev-slide" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="prev-slide" id="prevSlideBtn">&#10094;</button>
                 <div class="gallery-counter">
                     <span id="currentSlide">1</span> / <span id="totalSlides">1</span>
                 </div>
-                <button class="next-slide" onclick="changeSlide(1)">&#10095;</button>
+                <button class="next-slide" id="nextSlideBtn">&#10095;</button>
             </div>
             <div class="gallery-caption" id="galleryCaption"></div>
         </div>
