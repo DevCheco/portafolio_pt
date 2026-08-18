@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevCheco</title>
-    <meta name="description" content="Digital Craftsman ( Artist / Developer / Designer )">
+    <title>DevCheco — Pedro Pacheco | Desarrollador de Software</title>
+    <meta name="description" content="Portafolio de Pedro Tomas Pacheco Pérez — Ingeniero de Sistemas y Desarrollador Full Stack colombiano especializado en desarrollo web frontend con React, JavaScript y más.">
 
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,13 +17,13 @@
 
     <!-- Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=M+PLUS+Rounded+1c:wght@700&display=swap"
         rel="stylesheet">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Font Awesome — solid + brands subsets only (avoids loading unused icon variants) -->
+    <!-- Font Awesome — deferred load -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css"
         media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css"
@@ -38,47 +38,55 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/regular.min.css">
     </noscript>
-
 </head>
 
 <body>
+    <!-- Mobile nav overlay -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- Skip to content — accesibilidad -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
         <div class="container">
-            <div class="nav-brand">
+            <a href="#" class="nav-brand" aria-label="DevCheco — Inicio">
                 <i class="fa fa-code" aria-hidden="true"></i>
                 <span>DevCheco</span>
-            </div>
+            </a>
 
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#works" title="Resumen"><i class="fa-regular fa-file"></i></a></li>
+            <ul class="nav-menu" id="navMenu" role="list">
+                <li><a href="#works">Resumen</a></li>
                 <li><a href="#experience">Experiencia</a></li>
                 <li><a href="#education">Educación</a></li>
-                <li><a href="#hard-skills">Hard Skills</a></li>
-                <li><a href="#soft-skills">Soft Skills</a></li>
-                <li><a href="#proyectos" title="Proyectos"><i class="fa-solid fa-code"></i></a></li>
-                <li><a href="#datos-de-interes" title="Datos de interés"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="#hard-skills">Skills</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
 
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                <i class="fas fa-sun"></i>
-            </button>
-
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema claro/oscuro">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main class="main-content">
+    <main class="main-content" id="main-content">
         <div class="container">
+
             <!-- Hero Section -->
-            <section class="hero">
+            <section class="hero" aria-label="Presentación">
+
+                <!-- Terminal -->
                 <div class="hero-illustration">
-                    <div class="terminal-container" id="terminalContainer">
+                    <div class="terminal-container" id="terminalContainer" role="img" aria-label="Terminal mostrando bienvenida">
                         <div class="terminal-header">
-                            <div class="terminal-buttons">
+                            <div class="terminal-buttons" aria-hidden="true">
                                 <span class="terminal-btn close"></span>
                                 <span class="terminal-btn minimize"></span>
                                 <span class="terminal-btn maximize"></span>
@@ -88,789 +96,640 @@
                         <div class="terminal-body" id="terminalBody">
                             <div class="terminal-line">
                                 <span class="terminal-prompt">devcheco@portafolio:~$</span>
-                                <span class="terminal-text"> figlet -f banner "DevCheco"</span>
+                                <span class="terminal-text"> whoami</span>
                             </div>
                             <div class="terminal-output">
-                                <div class="terminal-banner">DevCheco</div>
+                                <p class="terminal-welcome">Pedro Tomas Pacheco &#x1F44B;</p>
                             </div>
                             <div class="terminal-line">
                                 <span class="terminal-prompt">devcheco@portafolio:~$</span>
-                                <span class="terminal-text"> echo "Bienvenido a mi portafolio! �"</span>
+                                <span class="terminal-text"> cat about.txt</span>
                             </div>
                             <div class="terminal-output">
-                                <p class="terminal-welcome">Bienvenido a mi portafolio! �</p>
+                                <p><span class="terminal-info-label">Rol:</span> Ingeniero de Sistemas &amp; Dev Full Stack</p>
+                                <p><span class="terminal-info-label">Stack:</span> React · Node.js · PHP · Python</p>
+                                <p><span class="terminal-info-label">Ubicación:</span> Córdoba, Colombia &#x1F1E8;&#x1F1F4;</p>
+                                <p class="terminal-welcome">Estado: <span style="color:#27c93f;">&#x25cf; Disponible para trabajar</span></p>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">devcheco@portafolio:~$</span>
+                                <span class="terminal-cursor-blink">&#x2588;</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="hero-intro">
-                    <p class="greeting">¡Hola! Soy Ingeniero de Sistemas y Técnico en Desarrollo de Software
-                        Colombiano, apasionado por crear soluciones innovadoras.</p>
-                </div>
-
+                <!-- Nombre y título -->
                 <div class="hero-header">
                     <div class="hero-text">
-                        <h1 class="hero-name">Pedro Tomas Pacheco Pérez</h1>
-                        <p class="hero-title">Ingeniero de Sistemas | Desarrollador de Software</p>
+                        <p class="hero-greeting">&#x1F44B; ¡Hola! Soy</p>
+                        <h1 class="hero-name">Pedro Tomas<br>Pacheco Pérez</h1>
+                        <p class="hero-title">
+                            <span class="hero-title-badge">Ingeniero de Sistemas</span>
+                            <span class="hero-title-sep" aria-hidden="true">&middot;</span>
+                            <span class="hero-title-badge">Desarrollador Full Stack</span>
+                        </p>
+                        <p class="hero-bio">
+                            Colombiano, apasionado por construir soluciones web innovadoras con enfoque en rendimiento, accesibilidad y buena UX.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="/pdf/CV_Pedro_Pacheco.pdf" target="_blank" rel="noopener noreferrer"
+                                class="btn-primary" download>
+                                <i class="fas fa-download" aria-hidden="true"></i>
+                                Descargar CV
+                            </a>
+                            <a href="#contacto" class="btn-secondary">
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                                Contactar
+                            </a>
+                        </div>
                     </div>
-                    <div class="hero-avatar">
-                        <img src="assets/linkedin-foto.webp" alt="Profile picture" class="avatar-img" width="120"
-                            height="120" fetchpriority="high">
+                    <div class="hero-avatar" aria-hidden="true">
+                        <div class="avatar-ring">
+                            <img src="assets/linkedin-foto.webp" alt="Foto de perfil de Pedro Pacheco" class="avatar-img" width="140" height="140" fetchpriority="high">
+                        </div>
+                        <span class="avatar-badge">&#x1F1E8;&#x1F1F4; Colombia</span>
                     </div>
                 </div>
+
+                <!-- Scroll indicator -->
+                <div class="scroll-indicator" aria-hidden="true">
+                    <span>Scroll</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+
             </section>
 
-            <!-- Work Section -->
-            <section class="section work-section" id="works">
-                <h2 class="section-title">Resumen</h2>
+            <!-- Work / Resumen Section -->
+            <section class="section work-section" id="works" aria-labelledby="works-title">
+                <h2 class="section-title" id="works-title">Resumen</h2>
                 <div class="section-content">
                     <p class="work-description">
-                        Ingeniero de Sistemas, graduado de la UNAD, con formación técnica en Programación
+                        Ingeniero de Sistemas graduado de la UNAD, con formación técnica en Programación
                         de Software del SENA. Desarrollador full-stack con experiencia en diseño, desarrollo
                         e implementación de soluciones tecnológicas. Especializado en desarrollo web frontend
                         con HTML, CSS, JavaScript, React y Tailwind CSS. Apasionado por crear soluciones
-                        innovadoras, con enfoque en aprendizaje continuo y aporte de valor a través del
-                        código.
+                        innovadoras, con enfoque en aprendizaje continuo y aporte de valor a través del código.
                     </p>
-                    <div class="cta-button-wrapper">
-                        <a target="_blank" href="/pdf/CV_Pedro_Pacheco.pdf" class="btn-primary" id="portfolioBtn">
-                            Mi portafolio <i class="fas fa-chevron-right"></i>
-                        </a>
+
+                    <!-- Stats rápidas -->
+                    <div class="hero-stats" aria-label="Estadísticas destacadas">
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Años de experiencia</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">4+</span>
+                            <span class="stat-label">Proyectos completados</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Tecnologías</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- Experience Section -->
-            <section class="section experience-section" id="experience">
-                <h2 class="section-title">Experiencia</h2>
+            <section class="section experience-section" id="experience" aria-labelledby="experience-title">
+                <h2 class="section-title" id="experience-title">Experiencia</h2>
                 <div class="section-content">
                     <div class="experience-timeline">
+
                         <!-- UNAD - Líder Estudiantil -->
-                        <div class="experience-item">
+                        <article class="experience-item">
                             <div class="experience-header">
                                 <div class="experience-title-group">
-                                    <h3 class="experience-role">Líder Estudiantil - Semillero de Investigación JOKMAH
-                                    </h3>
-                                    <p class="experience-company">Universidad Nacional Abierta y a Distancia (UNAD)</p>
+                                    <h3 class="experience-role">Líder Estudiantil — Semillero de Investigación JOKMAH</h3>
+                                    <p class="experience-company">
+                                        <i class="fas fa-building" aria-hidden="true"></i>
+                                        Universidad Nacional Abierta y a Distancia (UNAD)
+                                    </p>
                                 </div>
                                 <div class="experience-meta">
-                                    <span class="experience-period">Enero 2022 – Febrero 2025</span>
-                                    <span class="experience-location">Córdoba, Colombia</span>
+                                    <span class="experience-period">
+                                        <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                                        Ene 2022 – Feb 2025
+                                    </span>
+                                    <span class="experience-location">
+                                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                        Córdoba, Colombia
+                                    </span>
                                 </div>
                             </div>
-                            <ul class="experience-achievements">
-                                <li><i class="fas fa-trophy"></i> Primer lugar Rally Latinoamericano de Innovación 2023
-                                    (100+ equipos, 10 países)</li>
-                                <li><i class="fas fa-chart-line"></i> Incrementé participación del semillero en 20%
-                                    capacitando 10+ estudiantes</li>
-                                <li><i class="fas fa-laptop-code"></i> Desarrollé plataforma web de evaluación
-                                    psicológica (200+ usuarios primer mes)</li>
+                            <ul class="experience-achievements" aria-label="Logros">
+                                <li><i class="fas fa-trophy" aria-hidden="true"></i> Primer lugar Rally Latinoamericano de Innovación 2023 (100+ equipos, 10 países)</li>
+                                <li><i class="fas fa-chart-line" aria-hidden="true"></i> Incrementé participación del semillero en 20% capacitando 10+ estudiantes</li>
+                                <li><i class="fas fa-laptop-code" aria-hidden="true"></i> Desarrollé plataforma web de evaluación psicológica (200+ usuarios primer mes)</li>
                             </ul>
-                        </div>
+                        </article>
 
                         <!-- UNAD - Proyecto Aplicado -->
-                        <div class="experience-item">
+                        <article class="experience-item">
                             <div class="experience-header">
                                 <div class="experience-title-group">
-                                    <h3 class="experience-role">Proyecto Aplicado - Opción de Grado</h3>
-                                    <p class="experience-company">Universidad Nacional Abierta y a Distancia (UNAD)</p>
+                                    <h3 class="experience-role">Proyecto Aplicado — Opción de Grado</h3>
+                                    <p class="experience-company">
+                                        <i class="fas fa-building" aria-hidden="true"></i>
+                                        Universidad Nacional Abierta y a Distancia (UNAD)
+                                    </p>
                                 </div>
                                 <div class="experience-meta">
-                                    <span class="experience-period">Julio 2024 – Diciembre 2024</span>
-                                    <span class="experience-location">Córdoba, Colombia</span>
+                                    <span class="experience-period">
+                                        <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                                        Jul 2024 – Dic 2024
+                                    </span>
+                                    <span class="experience-location">
+                                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                        Córdoba, Colombia
+                                    </span>
                                 </div>
                             </div>
-                            <ul class="experience-achievements">
-                                <li><i class="fas fa-robot"></i> Asistente virtual IA para detección de
-                                    depresión/ansiedad en estudiantes</li>
-                                <li><i class="fas fa-bolt"></i> Optimización NLP/ML: 40% más rápido, 90% precisión en
-                                    recomendaciones</li>
-                                <li><i class="fas fa-database"></i> Modelo entrenado con 100K+ interacciones, reducción
-                                    50% tiempo de espera</li>
+                            <ul class="experience-achievements" aria-label="Logros">
+                                <li><i class="fas fa-robot" aria-hidden="true"></i> Asistente virtual IA para detección de depresión/ansiedad en estudiantes</li>
+                                <li><i class="fas fa-bolt" aria-hidden="true"></i> Optimización NLP/ML: 40% más rápido, 90% precisión en recomendaciones</li>
+                                <li><i class="fas fa-database" aria-hidden="true"></i> Modelo entrenado con 100K+ interacciones, reducción 50% tiempo de espera</li>
                             </ul>
-                        </div>
+                        </article>
 
                         <!-- Freelance -->
-                        <div class="experience-item">
+                        <article class="experience-item">
                             <div class="experience-header">
                                 <div class="experience-title-group">
                                     <h3 class="experience-role">Desarrollador Frontend Junior</h3>
-                                    <p class="experience-company">Freelance</p>
+                                    <p class="experience-company">
+                                        <i class="fas fa-laptop" aria-hidden="true"></i>
+                                        Freelance
+                                    </p>
                                 </div>
                                 <div class="experience-meta">
-                                    <span class="experience-period">Enero 2024 – Febrero 2025</span>
-                                    <span class="experience-location">Córdoba, Colombia</span>
+                                    <span class="experience-period">
+                                        <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                                        Ene 2024 – Feb 2025
+                                    </span>
+                                    <span class="experience-location">
+                                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                        Córdoba, Colombia
+                                    </span>
                                 </div>
                             </div>
-                            <ul class="experience-achievements">
-                                <li><i class="fas fa-rocket"></i> Sitio web barbería: 45% mejora velocidad de carga</li>
-                                <li><i class="fas fa-mobile-alt"></i> Diseño UX/accesibilidad: 40% aumento conversión de
-                                    clientes</li>
+                            <ul class="experience-achievements" aria-label="Logros">
+                                <li><i class="fas fa-rocket" aria-hidden="true"></i> Sitio web barbería: 45% mejora en velocidad de carga</li>
+                                <li><i class="fas fa-mobile-alt" aria-hidden="true"></i> Diseño UX/accesibilidad: 40% aumento en conversión de clientes</li>
                             </ul>
-                        </div>
+                        </article>
+
                     </div>
                 </div>
             </section>
 
-            <!-- Bio Section -->
-            <section class="section bio-section" id="education">
-                <h2 class="section-title">Educación</h2>
+            <!-- Education Section -->
+            <section class="section bio-section" id="education" aria-labelledby="education-title">
+                <h2 class="section-title" id="education-title">Educación</h2>
                 <div class="section-content">
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <span class="timeline-year">2020 - 2025</span>
-                            <span class="timeline-text">Ingeniería de Sistemas - Universidad Nacional Abierta y a
-                                Distancia (UNAD)</span>
+                    <div class="timeline" role="list">
+                        <div class="timeline-item" role="listitem">
+                            <span class="timeline-year">2020 – 2025</span>
+                            <div class="timeline-body">
+                                <span class="timeline-text">Ingeniería de Sistemas</span>
+                                <span class="timeline-institution">Universidad Nacional Abierta y a Distancia (UNAD)</span>
+                            </div>
                         </div>
-                        <div class="timeline-item">
-                            <span class="timeline-year">2024 - 2025</span>
-                            <span class="timeline-text">Técnico en Programación de Software - Servicio Nacional de
-                                Aprendizaje (SENA)</span>
+                        <div class="timeline-item" role="listitem">
+                            <span class="timeline-year">2024 – 2025</span>
+                            <div class="timeline-body">
+                                <span class="timeline-text">Técnico en Programación de Software</span>
+                                <span class="timeline-institution">Servicio Nacional de Aprendizaje (SENA)</span>
+                            </div>
                         </div>
-                        <div class="timeline-item">
+                        <div class="timeline-item" role="listitem">
                             <span class="timeline-year">2024</span>
-                            <span class="timeline-text">Programador Web Frontend - One Oracle Next Education</span>
+                            <div class="timeline-body">
+                                <span class="timeline-text">Programador Web Frontend</span>
+                                <span class="timeline-institution">Oracle Next Education (ONE)</span>
+                            </div>
                         </div>
-                        <div class="timeline-item">
+                        <div class="timeline-item" role="listitem">
                             <span class="timeline-year">2023</span>
-                            <span class="timeline-text">Programador Web PHP - Servicio Nacional de Aprendizaje
-                                (SENA)</span>
+                            <div class="timeline-body">
+                                <span class="timeline-text">Programador Web PHP</span>
+                                <span class="timeline-institution">Servicio Nacional de Aprendizaje (SENA)</span>
+                            </div>
                         </div>
-                        <div class="timeline-item">
-                            <span class="timeline-year">2007 - 2018</span>
-                            <span class="timeline-text">Bachiller Académico - Institución Educativa San José</span>
+                        <div class="timeline-item" role="listitem">
+                            <span class="timeline-year">2007 – 2018</span>
+                            <div class="timeline-body">
+                                <span class="timeline-text">Bachiller Académico</span>
+                                <span class="timeline-institution">Institución Educativa San José</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- Hard Skills Section -->
-            <section class="section skills-section" id="hard-skills">
-                <h2 class="section-title">Hard Skills</h2>
+            <section class="section skills-section" id="hard-skills" aria-labelledby="hard-skills-title">
+                <h2 class="section-title" id="hard-skills-title">Hard Skills</h2>
                 <div class="section-content">
-                    <div class="keyboard-container">
+                    <div class="keyboard-container" role="img" aria-label="Teclado interactivo con tecnologías. Pasa el cursor o toca una tecla para ver el nombre de cada skill.">
                         <!-- Row 1: Function Keys -->
                         <div class="keyboard-row">
-                            <div class="keyboard-key key-esc" data-skill="Esc">
-                                <span class="key-main">Esc</span>
-                            </div>
-                            <div class="keyboard-key key-fn" data-skill="HTML">
-                                <i class="fab fa-html5"></i>
-                                <span class="key-sub">F1</span>
-                            </div>
-                            <div class="keyboard-key key-fn" data-skill="CSS">
-                                <i class="fab fa-css3-alt"></i>
-                                <span class="key-sub">F2</span>
-                            </div>
-                            <div class="keyboard-key key-fn" data-skill="JavaScript">
-                                <i class="fab fa-js"></i>
-                                <span class="key-sub">F3</span>
-                            </div>
-                            <div class="keyboard-key key-fn" data-skill="React">
-                                <i class="fab fa-react"></i>
-                                <span class="key-sub">F4</span>
-                            </div>
-                            <div class="keyboard-key key-fn" data-skill="Node.js">
-                                <i class="fab fa-node-js"></i>
-                                <span class="key-sub">F5</span>
-                            </div>
-                            <div class="keyboard-key key-fn" data-skill="Python">
-                                <i class="fab fa-python"></i>
-                                <span class="key-sub">F6</span>
-                            </div>
-                            <div class="keyboard-key key-fn" data-skill="PHP">
-                                <i class="fab fa-php"></i>
-                                <span class="key-sub">F7</span>
-                            </div>
-                            <div class="keyboard-key key-fn" data-skill="MySQL">
-                                <i class="fas fa-database"></i>
-                                <span class="key-sub">F8</span>
-                            </div>
-                            <div class="keyboard-key key-fn" data-skill="Git">
-                                <i class="fab fa-git-alt"></i>
-                                <span class="key-sub">F9</span>
-                            </div>
-                            <div class="keyboard-key key-fn" data-skill="GitHub">
-                                <i class="fab fa-github"></i>
-                                <span class="key-sub">F10</span>
-                            </div>
-                            <div class="keyboard-key key-fn" data-skill="Bootstrap">
-                                <i class="fab fa-bootstrap"></i>
-                                <span class="key-sub">F11</span>
-                            </div>
-                            <div class="keyboard-key key-fn" data-skill="Tailwind CSS">
-                                <i class="fas fa-wind"></i>
-                                <span class="key-sub">F12</span>
-                            </div>
-                            <div class="keyboard-key key-special" data-skill="Delete">
-                                <span class="key-main">Del</span>
-                            </div>
+                            <div class="keyboard-key key-esc" data-skill="Esc" tabindex="-1"><span class="key-main">Esc</span></div>
+                            <div class="keyboard-key key-fn" data-skill="HTML" tabindex="0" role="button" aria-label="HTML"><i class="fab fa-html5" aria-hidden="true"></i><span class="key-sub">F1</span></div>
+                            <div class="keyboard-key key-fn" data-skill="CSS" tabindex="0" role="button" aria-label="CSS"><i class="fab fa-css3-alt" aria-hidden="true"></i><span class="key-sub">F2</span></div>
+                            <div class="keyboard-key key-fn" data-skill="JavaScript" tabindex="0" role="button" aria-label="JavaScript"><i class="fab fa-js" aria-hidden="true"></i><span class="key-sub">F3</span></div>
+                            <div class="keyboard-key key-fn" data-skill="React" tabindex="0" role="button" aria-label="React"><i class="fab fa-react" aria-hidden="true"></i><span class="key-sub">F4</span></div>
+                            <div class="keyboard-key key-fn" data-skill="Node.js" tabindex="0" role="button" aria-label="Node.js"><i class="fab fa-node-js" aria-hidden="true"></i><span class="key-sub">F5</span></div>
+                            <div class="keyboard-key key-fn" data-skill="Python" tabindex="0" role="button" aria-label="Python"><i class="fab fa-python" aria-hidden="true"></i><span class="key-sub">F6</span></div>
+                            <div class="keyboard-key key-fn" data-skill="PHP" tabindex="0" role="button" aria-label="PHP"><i class="fab fa-php" aria-hidden="true"></i><span class="key-sub">F7</span></div>
+                            <div class="keyboard-key key-fn" data-skill="MySQL" tabindex="0" role="button" aria-label="MySQL"><i class="fas fa-database" aria-hidden="true"></i><span class="key-sub">F8</span></div>
+                            <div class="keyboard-key key-fn" data-skill="Git" tabindex="0" role="button" aria-label="Git"><i class="fab fa-git-alt" aria-hidden="true"></i><span class="key-sub">F9</span></div>
+                            <div class="keyboard-key key-fn" data-skill="GitHub" tabindex="0" role="button" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i><span class="key-sub">F10</span></div>
+                            <div class="keyboard-key key-fn" data-skill="Bootstrap" tabindex="0" role="button" aria-label="Bootstrap"><i class="fab fa-bootstrap" aria-hidden="true"></i><span class="key-sub">F11</span></div>
+                            <div class="keyboard-key key-fn" data-skill="Tailwind CSS" tabindex="0" role="button" aria-label="Tailwind CSS"><i class="fas fa-wind" aria-hidden="true"></i><span class="key-sub">F12</span></div>
+                            <div class="keyboard-key key-special" data-skill="Delete" tabindex="-1"><span class="key-main">Del</span></div>
                         </div>
 
                         <!-- Row 2: Number Row -->
                         <div class="keyboard-row">
-                            <div class="keyboard-key key-modifier" data-skill="Debugging">
-                                <span class="key-main">~</span>
-                                <span class="key-sub">`</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Express.js">
-                                <i class="fas fa-server"></i>
-                                <span class="key-sub">1</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="REST API">
-                                <i class="fas fa-exchange-alt"></i>
-                                <span class="key-sub">2</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="JSON">
-                                <i class="fas fa-code"></i>
-                                <span class="key-sub">3</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="MongoDB">
-                                <i class="fas fa-leaf"></i>
-                                <span class="key-sub">4</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="PostgreSQL">
-                                <i class="fas fa-server"></i>
-                                <span class="key-sub">5</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Responsive Design">
-                                <i class="fas fa-mobile-alt"></i>
-                                <span class="key-sub">6</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="VS Code">
-                                <i class="fas fa-code"></i>
-                                <span class="key-sub">7</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="npm">
-                                <i class="fab fa-npm"></i>
-                                <span class="key-sub">8</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Postman">
-                                <i class="fas fa-paper-plane"></i>
-                                <span class="key-sub">9</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Figma">
-                                <i class="fab fa-figma"></i>
-                                <span class="key-sub">0</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Linux">
-                                <i class="fab fa-linux"></i>
-                                <span class="key-sub">-</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Markdown">
-                                <i class="fab fa-markdown"></i>
-                                <span class="key-sub">=</span>
-                            </div>
-                            <div class="keyboard-key key-backspace" data-skill="Backspace">
-                                <span class="key-main">⌫</span>
-                            </div>
+                            <div class="keyboard-key key-modifier" data-skill="Debugging" tabindex="0" role="button" aria-label="Debugging"><span class="key-main">~</span><span class="key-sub">`</span></div>
+                            <div class="keyboard-key" data-skill="Express.js" tabindex="0" role="button" aria-label="Express.js"><i class="fas fa-server" aria-hidden="true"></i><span class="key-sub">1</span></div>
+                            <div class="keyboard-key" data-skill="REST API" tabindex="0" role="button" aria-label="REST API"><i class="fas fa-exchange-alt" aria-hidden="true"></i><span class="key-sub">2</span></div>
+                            <div class="keyboard-key" data-skill="JSON" tabindex="0" role="button" aria-label="JSON"><i class="fas fa-code" aria-hidden="true"></i><span class="key-sub">3</span></div>
+                            <div class="keyboard-key" data-skill="MongoDB" tabindex="0" role="button" aria-label="MongoDB"><i class="fas fa-leaf" aria-hidden="true"></i><span class="key-sub">4</span></div>
+                            <div class="keyboard-key" data-skill="PostgreSQL" tabindex="0" role="button" aria-label="PostgreSQL"><i class="fas fa-server" aria-hidden="true"></i><span class="key-sub">5</span></div>
+                            <div class="keyboard-key" data-skill="Responsive Design" tabindex="0" role="button" aria-label="Responsive Design"><i class="fas fa-mobile-alt" aria-hidden="true"></i><span class="key-sub">6</span></div>
+                            <div class="keyboard-key" data-skill="VS Code" tabindex="0" role="button" aria-label="VS Code"><i class="fas fa-code" aria-hidden="true"></i><span class="key-sub">7</span></div>
+                            <div class="keyboard-key" data-skill="npm" tabindex="0" role="button" aria-label="npm"><i class="fab fa-npm" aria-hidden="true"></i><span class="key-sub">8</span></div>
+                            <div class="keyboard-key" data-skill="Postman" tabindex="0" role="button" aria-label="Postman"><i class="fas fa-paper-plane" aria-hidden="true"></i><span class="key-sub">9</span></div>
+                            <div class="keyboard-key" data-skill="Figma" tabindex="0" role="button" aria-label="Figma"><i class="fab fa-figma" aria-hidden="true"></i><span class="key-sub">0</span></div>
+                            <div class="keyboard-key" data-skill="Linux" tabindex="0" role="button" aria-label="Linux"><i class="fab fa-linux" aria-hidden="true"></i><span class="key-sub">-</span></div>
+                            <div class="keyboard-key" data-skill="Markdown" tabindex="0" role="button" aria-label="Markdown"><i class="fab fa-markdown" aria-hidden="true"></i><span class="key-sub">=</span></div>
+                            <div class="keyboard-key key-backspace" data-skill="Backspace" tabindex="-1"><span class="key-main">&#x232B;</span></div>
                         </div>
 
                         <!-- Row 3: QWERTY Row -->
                         <div class="keyboard-row">
-                            <div class="keyboard-key key-tab" data-skill="Tab">
-                                <span class="key-main">Tab</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="jQuery">
-                                <i class="fas fa-code"></i>
-                                <span class="key-sub">Q</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Webpack">
-                                <i class="fas fa-cube"></i>
-                                <span class="key-sub">W</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="ESLint">
-                                <i class="fas fa-check-circle"></i>
-                                <span class="key-sub">E</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Regex">
-                                <i class="fas fa-code"></i>
-                                <span class="key-sub">R</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Testing">
-                                <i class="fas fa-vial"></i>
-                                <span class="key-sub">T</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="YAML">
-                                <i class="fas fa-file-code"></i>
-                                <span class="key-sub">Y</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Ubuntu">
-                                <i class="fab fa-ubuntu"></i>
-                                <span class="key-sub">U</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Insomnia">
-                                <i class="fas fa-moon"></i>
-                                <span class="key-sub">I</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="OOP">
-                                <i class="fas fa-object-group"></i>
-                                <span class="key-sub">O</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Prettier">
-                                <i class="fas fa-magic"></i>
-                                <span class="key-sub">P</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Sass/SCSS">
-                                <i class="fab fa-sass"></i>
-                                <span class="key-sub">[</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="XML">
-                                <i class="fas fa-code"></i>
-                                <span class="key-sub">]</span>
-                            </div>
-                            <div class="keyboard-key key-backslash" data-skill="Bash">
-                                <i class="fas fa-terminal"></i>
-                                <span class="key-sub">\</span>
-                            </div>
+                            <div class="keyboard-key key-tab" data-skill="Tab" tabindex="-1"><span class="key-main">Tab</span></div>
+                            <div class="keyboard-key" data-skill="jQuery" tabindex="0" role="button" aria-label="jQuery"><i class="fas fa-code" aria-hidden="true"></i><span class="key-sub">Q</span></div>
+                            <div class="keyboard-key" data-skill="Webpack" tabindex="0" role="button" aria-label="Webpack"><i class="fas fa-cube" aria-hidden="true"></i><span class="key-sub">W</span></div>
+                            <div class="keyboard-key" data-skill="ESLint" tabindex="0" role="button" aria-label="ESLint"><i class="fas fa-check-circle" aria-hidden="true"></i><span class="key-sub">E</span></div>
+                            <div class="keyboard-key" data-skill="Regex" tabindex="0" role="button" aria-label="Regex"><i class="fas fa-code" aria-hidden="true"></i><span class="key-sub">R</span></div>
+                            <div class="keyboard-key" data-skill="Testing" tabindex="0" role="button" aria-label="Testing"><i class="fas fa-vial" aria-hidden="true"></i><span class="key-sub">T</span></div>
+                            <div class="keyboard-key" data-skill="YAML" tabindex="0" role="button" aria-label="YAML"><i class="fas fa-file-code" aria-hidden="true"></i><span class="key-sub">Y</span></div>
+                            <div class="keyboard-key" data-skill="Ubuntu" tabindex="0" role="button" aria-label="Ubuntu"><i class="fab fa-ubuntu" aria-hidden="true"></i><span class="key-sub">U</span></div>
+                            <div class="keyboard-key" data-skill="Insomnia" tabindex="0" role="button" aria-label="Insomnia"><i class="fas fa-moon" aria-hidden="true"></i><span class="key-sub">I</span></div>
+                            <div class="keyboard-key" data-skill="OOP" tabindex="0" role="button" aria-label="Programación Orientada a Objetos"><i class="fas fa-object-group" aria-hidden="true"></i><span class="key-sub">O</span></div>
+                            <div class="keyboard-key" data-skill="Prettier" tabindex="0" role="button" aria-label="Prettier"><i class="fas fa-magic" aria-hidden="true"></i><span class="key-sub">P</span></div>
+                            <div class="keyboard-key" data-skill="Sass/SCSS" tabindex="0" role="button" aria-label="Sass/SCSS"><i class="fab fa-sass" aria-hidden="true"></i><span class="key-sub">[</span></div>
+                            <div class="keyboard-key" data-skill="XML" tabindex="0" role="button" aria-label="XML"><i class="fas fa-code" aria-hidden="true"></i><span class="key-sub">]</span></div>
+                            <div class="keyboard-key key-backslash" data-skill="Bash" tabindex="0" role="button" aria-label="Bash"><i class="fas fa-terminal" aria-hidden="true"></i><span class="key-sub">\</span></div>
                         </div>
 
                         <!-- Row 4: ASDF Row -->
                         <div class="keyboard-row">
-                            <div class="keyboard-key key-caps" data-skill="Caps Lock">
-                                <span class="key-main">Caps</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Agile">
-                                <i class="fas fa-sync-alt"></i>
-                                <span class="key-sub">A</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Scrum">
-                                <i class="fas fa-users-cog"></i>
-                                <span class="key-sub">S</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Docker">
-                                <i class="fab fa-docker"></i>
-                                <span class="key-sub">D</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Flexbox">
-                                <i class="fas fa-th"></i>
-                                <span class="key-sub">F</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Grid CSS">
-                                <i class="fas fa-th-large"></i>
-                                <span class="key-sub">G</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Heroku">
-                                <i class="fas fa-cloud"></i>
-                                <span class="key-sub">H</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Jest">
-                                <i class="fas fa-check-circle"></i>
-                                <span class="key-sub">J</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Kanban">
-                                <i class="fas fa-columns"></i>
-                                <span class="key-sub">K</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Localhost">
-                                <i class="fas fa-laptop-code"></i>
-                                <span class="key-sub">L</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="MVC">
-                                <i class="fas fa-sitemap"></i>
-                                <span class="key-sub">;</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="CRUD">
-                                <i class="fas fa-database"></i>
-                                <span class="key-sub">'</span>
-                            </div>
-                            <div class="keyboard-key key-enter" data-skill="Enter">
-                                <span class="key-main">↵</span>
-                            </div>
+                            <div class="keyboard-key key-caps" data-skill="Caps Lock" tabindex="-1"><span class="key-main">Caps</span></div>
+                            <div class="keyboard-key" data-skill="Agile" tabindex="0" role="button" aria-label="Agile"><i class="fas fa-sync-alt" aria-hidden="true"></i><span class="key-sub">A</span></div>
+                            <div class="keyboard-key" data-skill="Scrum" tabindex="0" role="button" aria-label="Scrum"><i class="fas fa-users-cog" aria-hidden="true"></i><span class="key-sub">S</span></div>
+                            <div class="keyboard-key" data-skill="Docker" tabindex="0" role="button" aria-label="Docker"><i class="fab fa-docker" aria-hidden="true"></i><span class="key-sub">D</span></div>
+                            <div class="keyboard-key" data-skill="Flexbox" tabindex="0" role="button" aria-label="Flexbox"><i class="fas fa-th" aria-hidden="true"></i><span class="key-sub">F</span></div>
+                            <div class="keyboard-key" data-skill="Grid CSS" tabindex="0" role="button" aria-label="CSS Grid"><i class="fas fa-th-large" aria-hidden="true"></i><span class="key-sub">G</span></div>
+                            <div class="keyboard-key" data-skill="Heroku" tabindex="0" role="button" aria-label="Heroku"><i class="fas fa-cloud" aria-hidden="true"></i><span class="key-sub">H</span></div>
+                            <div class="keyboard-key" data-skill="Jest" tabindex="0" role="button" aria-label="Jest"><i class="fas fa-check-circle" aria-hidden="true"></i><span class="key-sub">J</span></div>
+                            <div class="keyboard-key" data-skill="Kanban" tabindex="0" role="button" aria-label="Kanban"><i class="fas fa-columns" aria-hidden="true"></i><span class="key-sub">K</span></div>
+                            <div class="keyboard-key" data-skill="Localhost" tabindex="0" role="button" aria-label="Localhost"><i class="fas fa-laptop-code" aria-hidden="true"></i><span class="key-sub">L</span></div>
+                            <div class="keyboard-key" data-skill="MVC" tabindex="0" role="button" aria-label="MVC"><i class="fas fa-sitemap" aria-hidden="true"></i><span class="key-sub">;</span></div>
+                            <div class="keyboard-key" data-skill="CRUD" tabindex="0" role="button" aria-label="CRUD"><i class="fas fa-database" aria-hidden="true"></i><span class="key-sub">'</span></div>
+                            <div class="keyboard-key key-enter" data-skill="Enter" tabindex="-1"><span class="key-main">&#x21B5;</span></div>
                         </div>
 
                         <!-- Row 5: ZXCV Row -->
                         <div class="keyboard-row">
-                            <div class="keyboard-key key-shift" data-skill="Shift">
-                                <span class="key-main">⇧</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Vite">
-                                <i class="fas fa-bolt"></i>
-                                <span class="key-sub">Z</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="XAMPP">
-                                <i class="fas fa-server"></i>
-                                <span class="key-sub">X</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Chrome DevTools">
-                                <i class="fab fa-chrome"></i>
-                                <span class="key-sub">C</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Vercel">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <span class="key-sub">V</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Babel">
-                                <i class="fas fa-language"></i>
-                                <span class="key-sub">B</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Netlify">
-                                <i class="fas fa-cloud"></i>
-                                <span class="key-sub">N</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Material-UI">
-                                <i class="fas fa-palette"></i>
-                                <span class="key-sub">M</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="SEO">
-                                <i class="fas fa-search"></i>
-                                <span class="key-sub">,</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Performance">
-                                <i class="fas fa-tachometer-alt"></i>
-                                <span class="key-sub">.</span>
-                            </div>
-                            <div class="keyboard-key" data-skill="Security">
-                                <i class="fas fa-shield-alt"></i>
-                                <span class="key-sub">/</span>
-                            </div>
-                            <div class="keyboard-key key-shift-right" data-skill="Shift">
-                                <span class="key-main">⇧</span>
-                            </div>
+                            <div class="keyboard-key key-shift" data-skill="Shift" tabindex="-1"><span class="key-main">&#x21E7;</span></div>
+                            <div class="keyboard-key" data-skill="Vite" tabindex="0" role="button" aria-label="Vite"><i class="fas fa-bolt" aria-hidden="true"></i><span class="key-sub">Z</span></div>
+                            <div class="keyboard-key" data-skill="XAMPP" tabindex="0" role="button" aria-label="XAMPP"><i class="fas fa-server" aria-hidden="true"></i><span class="key-sub">X</span></div>
+                            <div class="keyboard-key" data-skill="Chrome DevTools" tabindex="0" role="button" aria-label="Chrome DevTools"><i class="fab fa-chrome" aria-hidden="true"></i><span class="key-sub">C</span></div>
+                            <div class="keyboard-key" data-skill="Vercel" tabindex="0" role="button" aria-label="Vercel"><i class="fas fa-cloud-upload-alt" aria-hidden="true"></i><span class="key-sub">V</span></div>
+                            <div class="keyboard-key" data-skill="Babel" tabindex="0" role="button" aria-label="Babel"><i class="fas fa-language" aria-hidden="true"></i><span class="key-sub">B</span></div>
+                            <div class="keyboard-key" data-skill="Netlify" tabindex="0" role="button" aria-label="Netlify"><i class="fas fa-cloud" aria-hidden="true"></i><span class="key-sub">N</span></div>
+                            <div class="keyboard-key" data-skill="Material-UI" tabindex="0" role="button" aria-label="Material UI"><i class="fas fa-palette" aria-hidden="true"></i><span class="key-sub">M</span></div>
+                            <div class="keyboard-key" data-skill="SEO" tabindex="0" role="button" aria-label="SEO"><i class="fas fa-search" aria-hidden="true"></i><span class="key-sub">,</span></div>
+                            <div class="keyboard-key" data-skill="Performance" tabindex="0" role="button" aria-label="Performance"><i class="fas fa-tachometer-alt" aria-hidden="true"></i><span class="key-sub">.</span></div>
+                            <div class="keyboard-key" data-skill="Security" tabindex="0" role="button" aria-label="Security"><i class="fas fa-shield-alt" aria-hidden="true"></i><span class="key-sub">/</span></div>
+                            <div class="keyboard-key key-shift-right" data-skill="Shift" tabindex="-1"><span class="key-main">&#x21E7;</span></div>
                         </div>
 
                         <!-- Row 6: Bottom Row -->
                         <div class="keyboard-row">
-                            <div class="keyboard-key key-ctrl" data-skill="Ctrl">
-                                <span class="key-main">Ctrl</span>
-                            </div>
-                            <div class="keyboard-key key-win" data-skill="Win">
-                                <span class="key-main">Win</span>
-                            </div>
-                            <div class="keyboard-key key-alt" data-skill="Alt">
-                                <span class="key-main">Alt</span>
-                            </div>
-                            <div class="keyboard-key key-space" data-skill="Full Stack Development">
+                            <div class="keyboard-key key-ctrl" data-skill="Ctrl" tabindex="-1"><span class="key-main">Ctrl</span></div>
+                            <div class="keyboard-key key-win" data-skill="Win" tabindex="-1"><span class="key-main">Win</span></div>
+                            <div class="keyboard-key key-alt" data-skill="Alt" tabindex="-1"><span class="key-main">Alt</span></div>
+                            <div class="keyboard-key key-space" data-skill="Full Stack Development" tabindex="0" role="button" aria-label="Full Stack Development">
                                 <span class="key-brand">Full Stack Developer</span>
                             </div>
-                            <div class="keyboard-key key-alt" data-skill="Alt Gr">
-                                <span class="key-main">Alt</span>
+                            <div class="keyboard-key key-alt" data-skill="Alt Gr" tabindex="-1"><span class="key-main">Alt</span></div>
+                            <div class="keyboard-key key-fn-bottom" data-skill="Fn" tabindex="-1"><span class="key-main">Fn</span></div>
+                            <div class="keyboard-key key-ctrl" data-skill="Ctrl" tabindex="-1"><span class="key-main">Ctrl</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Soft Skills Section -->
+            <section class="section soft-skills-section" id="soft-skills" aria-labelledby="soft-skills-title">
+                <h2 class="section-title" id="soft-skills-title">Habilidades Blandas</h2>
+                <div class="section-content">
+                    <div class="sc-wrap ss-wrap">
+
+                        <aside class="sc-sidebar ss-sidebar" aria-label="Categorías de habilidades blandas">
+                            <span class="sc-sidebar-label">
+                                <i class="fas fa-brain" aria-hidden="true"></i>
+                                Categorías
+                            </span>
+                            <nav class="sc-nav" aria-label="Categorías">
+                                <button class="sc-nav-item active" data-skill-cat="comunicacion" aria-pressed="true">
+                                    <span class="sc-nav-thumb" style="--c:#7c6af7"><i class="fas fa-comments" aria-hidden="true"></i></span>
+                                    <div class="sc-nav-meta">
+                                        <span class="sc-nav-name">Comunicación</span>
+                                        <span class="sc-nav-sub">6 habilidades</span>
+                                    </div>
+                                    <i class="fas fa-chevron-right sc-nav-arrow" aria-hidden="true"></i>
+                                </button>
+                                <button class="sc-nav-item" data-skill-cat="liderazgo" aria-pressed="false">
+                                    <span class="sc-nav-thumb" style="--c:#f06a9a"><i class="fas fa-users" aria-hidden="true"></i></span>
+                                    <div class="sc-nav-meta">
+                                        <span class="sc-nav-name">Liderazgo</span>
+                                        <span class="sc-nav-sub">5 habilidades</span>
+                                    </div>
+                                    <i class="fas fa-chevron-right sc-nav-arrow" aria-hidden="true"></i>
+                                </button>
+                                <button class="sc-nav-item" data-skill-cat="pensamiento" aria-pressed="false">
+                                    <span class="sc-nav-thumb" style="--c:#06b6d4"><i class="fas fa-lightbulb" aria-hidden="true"></i></span>
+                                    <div class="sc-nav-meta">
+                                        <span class="sc-nav-name">Estrategia</span>
+                                        <span class="sc-nav-sub">8 habilidades</span>
+                                    </div>
+                                    <i class="fas fa-chevron-right sc-nav-arrow" aria-hidden="true"></i>
+                                </button>
+                                <button class="sc-nav-item" data-skill-cat="gestion" aria-pressed="false">
+                                    <span class="sc-nav-thumb" style="--c:#10b981"><i class="fas fa-rocket" aria-hidden="true"></i></span>
+                                    <div class="sc-nav-meta">
+                                        <span class="sc-nav-name">Gestión</span>
+                                        <span class="sc-nav-sub">7 habilidades</span>
+                                    </div>
+                                    <i class="fas fa-chevron-right sc-nav-arrow" aria-hidden="true"></i>
+                                </button>
+                            </nav>
+                        </aside>
+
+                        <div class="sc-panel ss-panel">
+                            <div class="sc-badge sc-badge-tech ss-badge-count">
+                                <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                                <span id="ssSkillCount">6 habilidades</span>
                             </div>
-                            <div class="keyboard-key key-fn-bottom" data-skill="Fn">
-                                <span class="key-main">Fn</span>
+                            <div class="ss-hero">
+                                <div class="ss-hero-icon" id="ssHeroIcon">
+                                    <i class="fas fa-comments" aria-hidden="true"></i>
+                                </div>
+                                <div class="ss-hero-text">
+                                    <h3 class="ss-cat-title" id="ssCatTitle">Comunicación e Interacción</h3>
+                                    <p class="ss-cat-desc" id="ssCatDesc">Habilidades para transmitir ideas con claridad, escuchar activamente y conectar con las personas.</p>
+                                </div>
                             </div>
-                            <div class="keyboard-key key-ctrl" data-skill="Ctrl">
-                                <span class="key-main">Ctrl</span>
+                            <div class="ss-skills-grid" id="ssSkillsGrid" aria-live="polite">
+                                <div class="ss-skill-card"><i class="fas fa-comment-dots" aria-hidden="true"></i><strong>Comunicación Efectiva</strong><span>Transmito ideas técnicas de forma clara y precisa.</span></div>
+                                <div class="ss-skill-card"><i class="fas fa-ear-listen" aria-hidden="true"></i><strong>Escucha Activa</strong><span>Comprendo requisitos y feedback sin interrumpir.</span></div>
+                                <div class="ss-skill-card"><i class="fas fa-heart" aria-hidden="true"></i><strong>Empatía</strong><span>Comprendo las necesidades y emociones del usuario.</span></div>
+                                <div class="ss-skill-card"><i class="fas fa-handshake" aria-hidden="true"></i><strong>Negociación</strong><span>Encuentro soluciones beneficiosas para todas las partes.</span></div>
+                                <div class="ss-skill-card"><i class="fas fa-microphone" aria-hidden="true"></i><strong>Presentaciones Técnicas</strong><span>Explico conceptos a audiencias diversas con confianza.</span></div>
+                                <div class="ss-skill-card"><i class="fas fa-file-alt" aria-hidden="true"></i><strong>Documentación Técnica</strong><span>Documento código y procesos de forma clara y estructurada.</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Soft Skills Section - Showcase -->
-            <section class="section soft-skills-section" id="soft-skills">
-                <h2 class="section-title">Habilidades Blandas</h2>
-                <div class="section-content">
-                    <div class="sc-wrap ss-wrap">
-
-                        <!-- === SIDEBAR === -->
-                        <aside class="sc-sidebar ss-sidebar">
-                            <span class="sc-sidebar-label">
-                                <i class="fas fa-brain"></i>
-                                Categorías
-                            </span>
-                            <nav class="sc-nav">
-                                <button class="sc-nav-item active" data-skill-cat="comunicacion">
-                                    <span class="sc-nav-thumb" style="--c:#7c6af7"><i
-                                            class="fas fa-comments"></i></span>
-                                    <div class="sc-nav-meta">
-                                        <span class="sc-nav-name">Comunicación</span>
-                                        <span class="sc-nav-sub">6 habilidades</span>
-                                    </div>
-                                    <i class="fas fa-chevron-right sc-nav-arrow"></i>
-                                </button>
-                                <button class="sc-nav-item" data-skill-cat="liderazgo">
-                                    <span class="sc-nav-thumb" style="--c:#f06a9a"><i class="fas fa-users"></i></span>
-                                    <div class="sc-nav-meta">
-                                        <span class="sc-nav-name">Liderazgo</span>
-                                        <span class="sc-nav-sub">5 habilidades</span>
-                                    </div>
-                                    <i class="fas fa-chevron-right sc-nav-arrow"></i>
-                                </button>
-                                <button class="sc-nav-item" data-skill-cat="pensamiento">
-                                    <span class="sc-nav-thumb" style="--c:#06b6d4"><i
-                                            class="fas fa-lightbulb"></i></span>
-                                    <div class="sc-nav-meta">
-                                        <span class="sc-nav-name">Estrategia</span>
-                                        <span class="sc-nav-sub">8 habilidades</span>
-                                    </div>
-                                    <i class="fas fa-chevron-right sc-nav-arrow"></i>
-                                </button>
-                                <button class="sc-nav-item" data-skill-cat="gestion">
-                                    <span class="sc-nav-thumb" style="--c:#10b981"><i class="fas fa-rocket"></i></span>
-                                    <div class="sc-nav-meta">
-                                        <span class="sc-nav-name">Gestión</span>
-                                        <span class="sc-nav-sub">7 habilidades</span>
-                                    </div>
-                                    <i class="fas fa-chevron-right sc-nav-arrow"></i>
-                                </button>
-                            </nav>
-                        </aside>
-
-                        <!-- === MAIN PANEL === -->
-                        <div class="sc-panel ss-panel">
-
-                            <!-- Floating badge -->
-                            <div class="sc-badge sc-badge-tech ss-badge-count">
-                                <i class="fas fa-star-half-alt"></i>
-                                <span id="ssSkillCount">6 habilidades</span>
-                            </div>
-
-                            <!-- Category hero strip -->
-                            <div class="ss-hero">
-                                <div class="ss-hero-icon" id="ssHeroIcon">
-                                    <i class="fas fa-comments"></i>
-                                </div>
-                                <div class="ss-hero-text">
-                                    <h3 class="ss-cat-title" id="ssCatTitle">Comunicación e Interacción</h3>
-                                    <p class="ss-cat-desc" id="ssCatDesc">Habilidades para transmitir ideas con
-                                        claridad, escuchar activamente y conectar con las personas.</p>
-                                </div>
-                            </div>
-
-                            <!-- Skills grid -->
-                            <div class="ss-skills-grid" id="ssSkillsGrid">
-                                <!-- Comunicacion skills (default) -->
-                                <div class="ss-skill-card"><i class="fas fa-comment-dots"></i><strong>Comunicación
-                                        Efectiva</strong><span>Transmito ideas técnicas de forma clara y precisa.</span>
-                                </div>
-                                <div class="ss-skill-card"><i class="fas fa-ear-listen"></i><strong>Escucha
-                                        Activa</strong><span>Comprendo requisitos y feedback sin interrumpir.</span>
-                                </div>
-                                <div class="ss-skill-card"><i
-                                        class="fas fa-heart"></i><strong>Empatía</strong><span>Comprendo las necesidades
-                                        y emociones del usuario.</span></div>
-                                <div class="ss-skill-card"><i
-                                        class="fas fa-handshake"></i><strong>Negociación</strong><span>Encuentro
-                                        soluciones beneficiosas para todas las partes.</span></div>
-                                <div class="ss-skill-card"><i class="fas fa-microphone"></i><strong>Presentaciones
-                                        Técnicas</strong><span>Explico conceptos a audiencias diversas con
-                                        confianza.</span></div>
-                                <div class="ss-skill-card"><i class="fas fa-file-alt"></i><strong>Documentación
-                                        Técnica</strong><span>Documento código y procesos de forma clara y
-                                        estructurada.</span></div>
-                            </div>
-
-                        </div><!-- end ss-panel -->
-                    </div><!-- end ss-wrap -->
-                </div>
-            </section>
-
-
-            <!-- Interests Section -->
-            <section class="section interests-section">
-                <h2 class="section-title">Yo ♥</h2>
-                <div class="section-content">
-                    <p class="interests-list">
-                        Programación, <span class="link-accent">Desarrollo Web</span>, Tecnología, <span
-                            class="link-accent">Innovación</span>, Aprendizaje Continuo, Open Source
-                    </p>
-                </div>
-            </section>
-
-            <!-- Projects Section - Interactive Showcase -->
-            <section class="section" id="proyectos">
-                <h2 class="section-title">Proyectos</h2>
+            <!-- Projects Section -->
+            <section class="section" id="proyectos" aria-labelledby="proyectos-title">
+                <h2 class="section-title" id="proyectos-title">Proyectos</h2>
                 <div class="section-content">
                     <div class="sc-wrap">
 
-                        <!-- === SIDEBAR === -->
-                        <aside class="sc-sidebar">
+                        <aside class="sc-sidebar" aria-label="Lista de proyectos">
                             <span class="sc-sidebar-label">
-                                <i class="fas fa-th-large"></i>
+                                <i class="fas fa-th-large" aria-hidden="true"></i>
                                 Mis proyectos
                             </span>
-                            <nav class="sc-nav">
-
+                            <nav class="sc-nav" aria-label="Proyectos">
                                 <div class="sc-nav-group">
-                                    <span class="sc-nav-group-label">
-                                        <i class="fas fa-briefcase"></i>Clientes
-                                    </span>
-                                    <button class="sc-nav-item active" data-project="client1">
-                                        <span class="sc-nav-thumb" style="--c:#7c6af7">
-                                            <i class="fas fa-store"></i>
-                                        </span>
+                                    <span class="sc-nav-group-label"><i class="fas fa-briefcase" aria-hidden="true"></i>Clientes</span>
+                                    <button class="sc-nav-item active" data-project="client1" aria-pressed="true">
+                                        <span class="sc-nav-thumb" style="--c:#7c6af7"><i class="fas fa-store" aria-hidden="true"></i></span>
                                         <div class="sc-nav-meta">
                                             <span class="sc-nav-name">E-commerce</span>
                                             <span class="sc-nav-sub">PHP · MySQL · Bootstrap</span>
                                         </div>
-                                        <i class="fas fa-chevron-right sc-nav-arrow"></i>
+                                        <i class="fas fa-chevron-right sc-nav-arrow" aria-hidden="true"></i>
                                     </button>
                                 </div>
-
                                 <div class="sc-nav-group">
-                                    <span class="sc-nav-group-label">
-                                        <i class="fas fa-user"></i>Personales
-                                    </span>
-                                    <button class="sc-nav-item" data-project="personal1">
-                                        <span class="sc-nav-thumb" style="--c:#06b6d4">
-                                            <i class="fas fa-laptop-code"></i>
-                                        </span>
+                                    <span class="sc-nav-group-label"><i class="fas fa-user" aria-hidden="true"></i>Personales</span>
+                                    <button class="sc-nav-item" data-project="personal1" aria-pressed="false">
+                                        <span class="sc-nav-thumb" style="--c:#06b6d4"><i class="fas fa-laptop-code" aria-hidden="true"></i></span>
                                         <div class="sc-nav-meta">
                                             <span class="sc-nav-name">Portfolio</span>
                                             <span class="sc-nav-sub">HTML · CSS · JS</span>
                                         </div>
-                                        <i class="fas fa-chevron-right sc-nav-arrow"></i>
+                                        <i class="fas fa-chevron-right sc-nav-arrow" aria-hidden="true"></i>
                                     </button>
-                                    <button class="sc-nav-item" data-project="medicontrol">
-                                        <span class="sc-nav-thumb" style="--c:#10b981">
-                                            <i class="fas fa-pills"></i>
-                                        </span>
+                                    <button class="sc-nav-item" data-project="medicontrol" aria-pressed="false">
+                                        <span class="sc-nav-thumb" style="--c:#10b981"><i class="fas fa-pills" aria-hidden="true"></i></span>
                                         <div class="sc-nav-meta">
                                             <span class="sc-nav-name">MediControl</span>
                                             <span class="sc-nav-sub">PHP · MySQL · CSS</span>
                                         </div>
-                                        <i class="fas fa-chevron-right sc-nav-arrow"></i>
+                                        <i class="fas fa-chevron-right sc-nav-arrow" aria-hidden="true"></i>
                                     </button>
-                                    <button class="sc-nav-item" data-project="thomybot">
-                                        <span class="sc-nav-thumb" style="--c:#f06a9a">
-                                            <i class="fas fa-robot"></i>
-                                        </span>
+                                    <button class="sc-nav-item" data-project="thomybot" aria-pressed="false">
+                                        <span class="sc-nav-thumb" style="--c:#f06a9a"><i class="fas fa-robot" aria-hidden="true"></i></span>
                                         <div class="sc-nav-meta">
                                             <span class="sc-nav-name">ThomyBot AI</span>
                                             <span class="sc-nav-sub">TensorFlow.js · NLP</span>
                                         </div>
-                                        <i class="fas fa-chevron-right sc-nav-arrow"></i>
+                                        <i class="fas fa-chevron-right sc-nav-arrow" aria-hidden="true"></i>
                                     </button>
                                 </div>
-
                             </nav>
                         </aside>
 
-                        <!-- === MAIN PANEL === -->
-                        <div class="sc-panel">
-
-                            <!-- Floating badges -->
-                            <div class="sc-badge sc-badge-tech" id="scBadgeTech">
-                                <i class="fas fa-code"></i>
-                                <span id="scTechText">PHP · MySQL · JS</span>
-                            </div>
-                            <div class="sc-badge sc-badge-type" id="scBadgeType">
-                                <i class="fas fa-tag"></i>
-                                <span id="scTypeText">Cliente</span>
-                            </div>
-                            <div class="sc-badge sc-badge-rating" id="scBadgeRating">
-                                <i class="fas fa-star"></i>
-                                <span id="scRatingText">4.8</span>
-                            </div>
-
-                            <!-- Browser mockup -->
+                        <div class="sc-panel sc-projects-panel">
+                            <div class="sc-badge sc-badge-tech" id="scBadgeTech"><i class="fas fa-code" aria-hidden="true"></i><span id="scTechText">PHP · MySQL · JS</span></div>
+                            <div class="sc-badge sc-badge-type" id="scBadgeType"><i class="fas fa-tag" aria-hidden="true"></i><span id="scTypeText">Cliente</span></div>
+                            <div class="sc-badge sc-badge-rating" id="scBadgeRating"><i class="fas fa-star" aria-hidden="true"></i><span id="scRatingText">4.8</span></div>
                             <div class="sc-mockup">
                                 <div class="sc-mockup-bar">
-                                    <div class="sc-dots">
+                                    <div class="sc-dots" aria-hidden="true">
                                         <span class="dot-r"></span>
                                         <span class="dot-y"></span>
                                         <span class="dot-g"></span>
                                     </div>
                                     <div class="sc-address-bar">
-                                        <i class="fas fa-lock sc-lock-icon"></i>
+                                        <i class="fas fa-lock sc-lock-icon" aria-hidden="true"></i>
                                         <span id="scUrlText">localhost/ecommerce</span>
                                     </div>
-                                    <div class="sc-mockup-refresh">
-                                        <i class="fas fa-rotate-right"></i>
-                                    </div>
+                                    <div class="sc-mockup-refresh" aria-hidden="true"><i class="fas fa-rotate-right"></i></div>
                                 </div>
                                 <div class="sc-mockup-screen">
-                                    <img id="scScreenImg" src="assets/proyecto_1.webp" alt="Project preview" width="800"
-                                        height="400" loading="lazy" />
-                                    <div class="sc-screen-fade"></div>
+                                    <img id="scScreenImg" src="assets/proyecto_1.webp" alt="Vista previa del proyecto E-commerce" width="800" height="400" loading="lazy" />
+                                    <div class="sc-screen-fade" aria-hidden="true"></div>
                                 </div>
                             </div>
-
-                            <!-- Project info row -->
                             <div class="sc-info">
                                 <div class="sc-info-left">
                                     <h3 class="sc-title" id="scTitle">E-commerce Multivendedor</h3>
-                                    <p class="sc-desc" id="scDesc">Marketplace modular con gestión de productos,
-                                        usuarios y compras. Arquitectura limpia con PHP, MySQL y API REST.</p>
+                                    <p class="sc-desc" id="scDesc">Marketplace modular con gestión de productos, usuarios y compras. Arquitectura limpia con PHP, MySQL y API REST.</p>
                                     <div class="sc-stats">
-                                        <div class="sc-stat">
-                                            <i class="fas fa-layer-group"></i>
-                                            <span id="scStackStat">Full Stack</span>
-                                        </div>
-                                        <div class="sc-stat">
-                                            <i class="fas fa-calendar-alt"></i>
-                                            <span id="scYearStat">2024</span>
-                                        </div>
-                                        <div class="sc-stat">
-                                            <i class="fas fa-users"></i>
-                                            <span id="scUsersStat">200+ usuarios</span>
-                                        </div>
+                                        <div class="sc-stat"><i class="fas fa-layer-group" aria-hidden="true"></i><span id="scStackStat">Full Stack</span></div>
+                                        <div class="sc-stat"><i class="fas fa-calendar-alt" aria-hidden="true"></i><span id="scYearStat">2024</span></div>
+                                        <div class="sc-stat"><i class="fas fa-users" aria-hidden="true"></i><span id="scUsersStat">200+ usuarios</span></div>
                                     </div>
                                 </div>
                                 <div class="sc-info-actions">
                                     <button class="sc-btn-gallery" id="scGalleryBtn">
-                                        <i class="fas fa-images"></i>
+                                        <i class="fas fa-images" aria-hidden="true"></i>
                                         <span>Galería</span>
                                     </button>
-                                    <a class="sc-btn-live" id="scLiveLink" href="#" target="_blank">
-                                        <i class="fas fa-arrow-up-right-from-square"></i>
+                                    <a class="sc-btn-live" id="scLiveLink" href="#" target="_blank" rel="noopener noreferrer">
+                                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
                                         <span>Demo</span>
                                     </a>
                                 </div>
                             </div>
-
-                        </div><!-- end sc-panel -->
-                    </div><!-- end sc-wrap -->
+                        </div>
+                    </div>
                 </div>
             </section>
 
-
-            <!-- Datos de Interés Section -->
-            <section class="section" id="datos-de-interes">
-                <h2 class="section-title">Datos de interés</h2>
+            <!-- Intereses Section -->
+            <section class="section interests-section" id="intereses" aria-labelledby="intereses-title">
+                <h2 class="section-title" id="intereses-title">Intereses</h2>
                 <div class="section-content">
-                    <ul class="social-links-list">
-                        <li>
-                            <a href="https://github.com/DevCheco" target="_blank" class="social-list-item">
-                                <i class="fab fa-github"></i>
-                                <span>@DevCheco</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/pachecop%C3%A9rez/" target="_blank"
-                                class="social-list-item">
-                                <i class="fab fa-linkedin"></i>
-                                <span>@PedroPacheco</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="social-list-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>pedrotompachecop@gmail.com</span>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="interests-grid">
+                        <div class="interest-chip"><i class="fas fa-code" aria-hidden="true"></i> Programación</div>
+                        <div class="interest-chip"><i class="fas fa-globe" aria-hidden="true"></i> Desarrollo Web</div>
+                        <div class="interest-chip"><i class="fas fa-microchip" aria-hidden="true"></i> Tecnología</div>
+                        <div class="interest-chip"><i class="fas fa-lightbulb" aria-hidden="true"></i> Innovación</div>
+                        <div class="interest-chip"><i class="fas fa-book" aria-hidden="true"></i> Aprendizaje Continuo</div>
+                        <div class="interest-chip"><i class="fab fa-github" aria-hidden="true"></i> Open Source</div>
+                        <div class="interest-chip"><i class="fas fa-brain" aria-hidden="true"></i> IA / Machine Learning</div>
+                        <div class="interest-chip"><i class="fas fa-universal-access" aria-hidden="true"></i> Accesibilidad Web</div>
+                    </div>
                 </div>
             </section>
+
+            <!-- Contacto Section -->
+            <section class="section contact-section" id="contacto" aria-labelledby="contacto-title">
+                <h2 class="section-title" id="contacto-title">Contacto</h2>
+                <div class="section-content">
+                    <p class="contact-intro">
+                        ¿Tienes un proyecto en mente o quieres conversar? Estoy disponible para nuevas oportunidades.
+                    </p>
+                    <div class="contact-grid">
+                        <!-- Links sociales -->
+                        <div class="contact-links" aria-label="Redes sociales y contacto">
+                            <a href="https://github.com/DevCheco" target="_blank" rel="noopener noreferrer" class="contact-link-card">
+                                <div class="contact-link-icon" style="--ic:#333"><i class="fab fa-github" aria-hidden="true"></i></div>
+                                <div class="contact-link-info">
+                                    <span class="contact-link-label">GitHub</span>
+                                    <span class="contact-link-value">@DevCheco</span>
+                                </div>
+                                <i class="fas fa-arrow-up-right-from-square contact-link-arrow" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/pachecop%C3%A9rez/" target="_blank" rel="noopener noreferrer" class="contact-link-card">
+                                <div class="contact-link-icon" style="--ic:#0a66c2"><i class="fab fa-linkedin" aria-hidden="true"></i></div>
+                                <div class="contact-link-info">
+                                    <span class="contact-link-label">LinkedIn</span>
+                                    <span class="contact-link-value">Pedro Pacheco</span>
+                                </div>
+                                <i class="fas fa-arrow-up-right-from-square contact-link-arrow" aria-hidden="true"></i>
+                            </a>
+                            <a href="mailto:pedrotompachecop@gmail.com" class="contact-link-card">
+                                <div class="contact-link-icon" style="--ic:#ea4335"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+                                <div class="contact-link-info">
+                                    <span class="contact-link-label">Email</span>
+                                    <span class="contact-link-value">pedrotompachecop@gmail.com</span>
+                                </div>
+                                <i class="fas fa-copy contact-link-arrow" aria-hidden="true" title="Copiar email"></i>
+                            </a>
+                        </div>
+
+                        <!-- CTA destacado -->
+                        <div class="contact-cta-card">
+                            <div class="contact-cta-icon">
+                                <i class="fas fa-handshake" aria-hidden="true"></i>
+                            </div>
+                            <h3>¡Trabajemos juntos!</h3>
+                            <p>Abierto a posiciones full-time, part-time o proyectos freelance.</p>
+                            <div class="contact-cta-status">
+                                <span class="status-dot" aria-hidden="true"></span>
+                                <span>Disponible para trabajar</span>
+                            </div>
+                            <a href="mailto:pedrotompachecop@gmail.com" class="btn-primary">
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                                Enviar mensaje
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <p class="footer-text">© <span id="currentYear">2026</span> Pedro Tomas Pacheco Pérez - DevCheco. Todos los
-                derechos reservados.</p>
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <i class="fa fa-code" aria-hidden="true"></i>
+                    <span>DevCheco</span>
+                </div>
+                <p class="footer-text">
+                    &copy; <span id="currentYear">2026</span> Pedro Tomas Pacheco Pérez. Todos los derechos reservados.
+                </p>
+                <div class="footer-social" aria-label="Redes sociales">
+                    <a href="https://github.com/DevCheco" target="_blank" rel="noopener noreferrer" aria-label="GitHub de DevCheco">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/pachecop%C3%A9rez/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Pedro Pacheco">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a href="mailto:pedrotompachecop@gmail.com" aria-label="Enviar email a Pedro Pacheco">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
 
     <!-- Gallery Modal -->
-    <div id="galleryModal" class="gallery-modal">
-        <span class="close-modal">&times;</span>
+    <div id="galleryModal" class="gallery-modal" role="dialog" aria-modal="true" aria-label="Galería de imágenes del proyecto" aria-hidden="true">
+        <button class="close-modal" aria-label="Cerrar galería">&times;</button>
         <div class="modal-content">
-            <img class="gallery-image" id="galleryImage" src="" alt="Project Gallery" width="800" height="600"
-                loading="lazy">
+            <img class="gallery-image" id="galleryImage" src="" alt="" width="800" height="600" loading="lazy">
             <div class="gallery-controls">
-                <button class="prev-slide" id="prevSlideBtn">&#10094;</button>
-                <div class="gallery-counter">
+                <button class="prev-slide" id="prevSlideBtn" aria-label="Imagen anterior">&#10094;</button>
+                <div class="gallery-counter" aria-live="polite">
                     <span id="currentSlide">1</span> / <span id="totalSlides">1</span>
                 </div>
-                <button class="next-slide" id="nextSlideBtn">&#10095;</button>
+                <button class="next-slide" id="nextSlideBtn" aria-label="Imagen siguiente">&#10095;</button>
             </div>
-            <div class="gallery-caption" id="galleryCaption"></div>
+            <div class="gallery-caption" id="galleryCaption" aria-live="polite"></div>
         </div>
     </div>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
     <!-- JavaScript -->
     <script src="script.js" defer></script>
