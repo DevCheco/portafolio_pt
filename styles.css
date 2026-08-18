@@ -2,78 +2,113 @@
    CSS VARIABLES
    ============================================================ */
 :root {
-    /* Dark Theme (default) */
-    --bg-primary: #0f0f13;
-    --bg-secondary: #17171e;
-    --bg-card: rgba(255, 255, 255, 0.05);
-    --bg-card-hover: rgba(255, 255, 255, 0.08);
-    --text-primary: #eeeef2;
-    --text-secondary: #8b8ba8;
-    --text-muted: #4a4a62;
-    --accent-primary: #7c6af7;
-    --accent-secondary: #f06a9a;
-    --accent-terceary: #f06a9a;
-    --accent-hover: #9585f9;
-    --accent-glow: rgba(0, 0, 0, 0.15);
+    /* === DARK THEME — "Midnight Slate" (default) === */
+
+    /* Backgrounds — azul-gris profundo, con jerarquía clara */
+    --bg-primary:    #111318;   /* Fondo principal: azul-gris muy oscuro */
+    --bg-secondary:  #1a1d24;   /* Navbar, sidebar, paneles */
+    --bg-card:       #21252e;   /* Tarjetas: sólido y definido */
+    --bg-card-hover: #272c38;   /* Hover de tarjetas: contraste claro */
+
+    /* Texto — jerarquía de 3 niveles */
+    --text-primary:   #e8eaf0;  /* Títulos y texto principal: blanco cálido */
+    --text-secondary: #8892a4;  /* Subtítulos, etiquetas: azul-gris medio */
+    --text-muted:     #4a5568;  /* Hints, timestamps: discreto */
+
+    /* Acento único — Azul índigo sobrio, sin neón */
+    --accent-primary:   #6c8df5;  /* Azul índigo profesional */
+    --accent-secondary: #e0457f;  /* Rosa — solo para botón de tema */
+    --accent-terceary:  #e0457f;
+    --accent-hover:     #5a7de8;  /* Versión más profunda para hover */
+
+    /* Sombras y brillos — neutrales, sin neón */
+    --accent-glow:      rgba(0, 0, 0, 0.2);
     --accent-glow-pink: rgba(0, 0, 0, 0.15);
-    --border-color: rgba(255, 255, 255, 0.08);
-    --border-accent: rgba(124, 106, 247, 0.3);
-    --shadow: rgba(0, 0, 0, 0.5);
-    --shadow-sm: rgba(0, 0, 0, 0.25);
-    --skill-key-light: #a099f8;
-    --skill-key-dark: #7c6af7;
-    --skill-key-hover: #b8b2fa;
-    --skill-key-border: #5e52c9;
-    --skill-key-shadow: #4a3fa0;
-    --skill-key-text: #ffffff;
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
+
+    /* Bordes — sólidos, mucho más visibles y estructurados */
+    --border-color:  #2d3344;                   /* Borde general */
+    --border-accent: rgba(108, 141, 245, 0.35); /* Borde de énfasis */
+
+    /* Sombras */
+    --shadow:    rgba(0, 0, 0, 0.45);
+    --shadow-sm: rgba(0, 0, 0, 0.22);
+
+    /* Teclas del teclado */
+    --skill-key-light:  #8aa4f2;
+    --skill-key-dark:   #6c8df5;
+    --skill-key-hover:  #a8bef7;
+    --skill-key-border: #4a6bd4;
+    --skill-key-shadow: #3a56b8;
+    --skill-key-text:   #ffffff;
+
+    /* Espaciado */
+    --spacing-xs:  0.5rem;
+    --spacing-sm:  1rem;
+    --spacing-md:  1.5rem;
+    --spacing-lg:  2rem;
+    --spacing-xl:  3rem;
     --spacing-2xl: 4rem;
-    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --font-size-sm: 0.875rem;
-    --font-size-base: 1rem;
-    --font-size-lg: 1.125rem;
-    --font-size-xl: 1.25rem;
-    --font-size-2xl: 1.5rem;
-    --font-size-3xl: 2rem;
-    --radius-sm: 0.375rem;
-    --radius-md: 0.5rem;
-    --radius-lg: 0.75rem;
-    --radius-xl: 1rem;
+
+    /* Tipografía */
+    --font-family:     'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-size-sm:    0.875rem;
+    --font-size-base:  1rem;
+    --font-size-lg:    1.125rem;
+    --font-size-xl:    1.25rem;
+    --font-size-2xl:   1.5rem;
+    --font-size-3xl:   2rem;
+
+    /* Radios */
+    --radius-sm:  0.375rem;
+    --radius-md:  0.5rem;
+    --radius-lg:  0.75rem;
+    --radius-xl:  1rem;
     --radius-2xl: 1.5rem;
+
+    /* Transiciones */
     --transition-fast: 0.15s ease;
     --transition-base: 0.3s ease;
     --transition-slow: 0.5s ease;
 }
 
-/* Light Theme */
+/* === LIGHT THEME — "Warm Linen" === */
 body.light-theme {
-    --bg-primary: #f5f4f0;
-    --bg-secondary: #ffffff;
-    --bg-card: rgba(255, 255, 255, 0.85);
-    --bg-card-hover: rgba(255, 255, 255, 0.95);
-    --text-primary: #1a1a2e;
-    --text-secondary: #52526e;
-    --text-muted: #9090aa;
-    --accent-primary: #5448d4;
-    --accent-secondary: #e0457f;
-    --accent-terceary: #e0457f;
-    --accent-hover: #6b5fe8;
-    --accent-glow: rgba(0, 0, 0, 0.1);
-    --accent-glow-pink: rgba(0, 0, 0, 0.1);
-    --border-color: rgba(0, 0, 0, 0.08);
-    --border-accent: rgba(84, 72, 212, 0.25);
-    --shadow: rgba(0, 0, 0, 0.12);
-    --shadow-sm: rgba(0, 0, 0, 0.06);
-    --skill-key-light: #c4bffa;
-    --skill-key-dark: #5448d4;
-    --skill-key-hover: #d6d2fc;
-    --skill-key-border: #4035b5;
-    --skill-key-shadow: #3329a0;
-    --skill-key-text: #ffffff;
+    /* Backgrounds — neutros cálidos con estructura clara */
+    --bg-primary:    #f8f7f5;   /* Lino neutro */
+    --bg-secondary:  #ffffff;   /* Blanco puro para navbar/paneles */
+    --bg-card:       #ffffff;   /* Tarjetas blancas sólidas */
+    --bg-card-hover: #eef1f8;   /* Hover: azul muy claro — indica interacción */
+
+    /* Texto — contraste suave pero legible */
+    --text-primary:   #1e2330;  /* Azul-gris oscuro, no negro puro */
+    --text-secondary: #5c6478;  /* Gris azulado para soporte */
+    --text-muted:     #8892a4;  /* Igual que dark para coherencia */
+
+    /* Acento — Azul cobalto profesional */
+    --accent-primary:   #3b5bdb;  /* Azul cobalto limpio */
+    --accent-secondary: #c0367a;  /* Rosa más profundo en claro */
+    --accent-terceary:  #c0367a;
+    --accent-hover:     #2f4fc4;  /* Más oscuro en hover */
+
+    /* Sombras y brillos */
+    --accent-glow:      rgba(0, 0, 0, 0.08);
+    --accent-glow-pink: rgba(0, 0, 0, 0.06);
+
+    /* Bordes — sólidos y sutiles */
+    --border-color:  #dde3ef;                   /* Borde azul muy claro */
+    --border-accent: rgba(59, 91, 219, 0.3);    /* Borde de énfasis */
+
+    /* Sombras */
+    --shadow:    rgba(30, 35, 48, 0.10);
+    --shadow-sm: rgba(30, 35, 48, 0.05);
+
+    /* Teclas del teclado */
+    --skill-key-light:  #b8c7f5;
+    --skill-key-dark:   #3b5bdb;
+    --skill-key-hover:  #cdd8f8;
+    --skill-key-border: #2c48c0;
+    --skill-key-shadow: #1e35a8;
+    --skill-key-text:   #ffffff;
 }
 
 /* ============================================================
@@ -129,15 +164,18 @@ body {
 .navbar {
     position: sticky;
     top: 0;
-    background-color: rgba(15, 15, 19, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background-color: rgba(17, 19, 24, 0.90);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
     padding: 0.75rem 0;
     z-index: 1000;
     transition: background-color var(--transition-base);
 }
-body.light-theme .navbar { background-color: rgba(245, 244, 240, 0.88); }
+body.light-theme .navbar {
+    background-color: rgba(248, 247, 245, 0.92);
+    box-shadow: 0 1px 12px rgba(30, 35, 48, 0.07);
+}
 
 .navbar .container {
     display: flex;
@@ -475,14 +513,13 @@ body.light-theme .navbar { background-color: rgba(245, 244, 240, 0.88); }
 
 .experience-item {
     background: var(--bg-card);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
     padding: var(--spacing-md);
     transition: all var(--transition-base);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 2px 8px var(--shadow-sm);
 }
 .experience-item::before {
     content: '';
@@ -705,6 +742,7 @@ body.light-theme .navbar { background-color: rgba(245, 244, 240, 0.88); }
     text-decoration: none;
     transition: all var(--transition-fast);
     color: var(--text-primary);
+    box-shadow: 0 2px 8px var(--shadow-sm);
 }
 .contact-link-card:hover {
     border-color: var(--accent-primary);
@@ -746,7 +784,7 @@ body.light-theme .navbar { background-color: rgba(245, 244, 240, 0.88); }
 /* CTA Card */
 .contact-cta-card {
     background: var(--bg-card);
-    border: 1px solid var(--accent-primary);
+    border: 1px solid var(--border-accent);
     border-radius: var(--radius-xl);
     padding: var(--spacing-lg);
     display: flex;
@@ -754,6 +792,7 @@ body.light-theme .navbar { background-color: rgba(245, 244, 240, 0.88); }
     align-items: center;
     text-align: center;
     gap: 0.75rem;
+    box-shadow: 0 4px 16px var(--shadow-sm);
 }
 
 .contact-cta-icon {
