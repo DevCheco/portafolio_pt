@@ -84,36 +84,39 @@
 
                 <!-- Terminal -->
                 <div class="hero-illustration">
-                    <div class="terminal-container" id="terminalContainer" role="img" aria-label="Terminal mostrando bienvenida">
+                    <div class="terminal-container" id="terminalContainer" role="img" aria-label="Terminal con información de perfil">
                         <div class="terminal-header">
-                            <div class="terminal-buttons" aria-hidden="true">
-                                <span class="terminal-btn close"></span>
-                                <span class="terminal-btn minimize"></span>
-                                <span class="terminal-btn maximize"></span>
+                            <div class="terminal-dots" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
                             </div>
-                            <div class="terminal-title">devcheco@portfolio:~$</div>
+                            <span class="terminal-title">pedro@portfolio:~</span>
                         </div>
                         <div class="terminal-body" id="terminalBody">
                             <div class="terminal-line">
-                                <span class="terminal-prompt">devcheco@portafolio:~$</span>
+                                <span class="terminal-prompt">~$</span>
                                 <span class="terminal-text"> whoami</span>
                             </div>
                             <div class="terminal-output">
-                                <p class="terminal-welcome">Pedro Tomas Pacheco &#x1F44B;</p>
+                                <p>Pedro Tomas Pacheco Pérez</p>
                             </div>
+
                             <div class="terminal-line">
-                                <span class="terminal-prompt">devcheco@portafolio:~$</span>
-                                <span class="terminal-text"> cat about.txt</span>
+                                <span class="terminal-prompt">~$</span>
+                                <span class="terminal-text"> cat perfil.txt</span>
                             </div>
                             <div class="terminal-output">
-                                <p><span class="terminal-info-label">Rol:</span> Ingeniero de Sistemas &amp; Dev Full Stack</p>
-                                <p><span class="terminal-info-label">Stack:</span> React · Node.js · PHP · Python</p>
-                                <p><span class="terminal-info-label">Ubicación:</span> Córdoba, Colombia &#x1F1E8;&#x1F1F4;</p>
-                                <p class="terminal-welcome">Estado: <span style="color:#27c93f;">&#x25cf; Disponible para trabajar</span></p>
+                                <p><span class="terminal-key">rol</span>       Ingeniero de Sistemas</p>
+                                <p><span class="terminal-key">formación</span> UNAD · SENA</p>
+                                <p><span class="terminal-key">stack</span>     React · Node.js · PHP · Python</p>
+                                <p><span class="terminal-key">ubicación</span> Córdoba, Colombia</p>
+                                <p><span class="terminal-key">estado</span>    <span class="terminal-status">disponible</span></p>
                             </div>
+
                             <div class="terminal-line">
-                                <span class="terminal-prompt">devcheco@portafolio:~$</span>
-                                <span class="terminal-cursor-blink">&#x2588;</span>
+                                <span class="terminal-prompt">~$</span>
+                                <span class="terminal-cursor-blink">▋</span>
                             </div>
                         </div>
                     </div>
