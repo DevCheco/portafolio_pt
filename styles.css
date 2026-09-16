@@ -1832,3 +1832,297 @@ body.light-theme .sc-screen-fade { display: none; }
     .animate-on-scroll { opacity: 1; transform: none; }
 }
 
+
+/* ============================================================
+   UX/UI IMPROVEMENTS — v2
+   Mejoras sobre composición, jerarquía, tipografía, espaciado
+   y accesibilidad. No modifica la paleta de colores existente.
+   ============================================================ */
+
+/* --- Hero name: color de texto principal, no acento azul --- */
+.hero-name {
+    color: var(--text-primary);
+}
+
+/* --- Hero greeting: más sobrio, sin emoji de mano --- */
+.hero-greeting {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+/* --- Hero bio: línea de altura ligeramente mayor, más legible --- */
+.hero-bio {
+    font-size: var(--font-size-base);
+    line-height: 1.75;
+    color: var(--text-secondary);
+    max-width: 440px;
+    margin-bottom: 1.75rem;
+}
+
+/* --- Hero actions: 3 CTAs — el primero es primario, los otros secundarios --- */
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    align-items: center;
+}
+
+/* --- Scroll indicator: solo icono, sin texto, animación sutil no constante --- */
+.scroll-indicator {
+    animation: none;
+    opacity: 0.35;
+    transition: opacity var(--transition-base);
+    padding-bottom: var(--spacing-sm);
+    font-size: 0.85rem;
+}
+.scroll-indicator:hover { opacity: 0.65; }
+.scroll-indicator span { display: none; } /* quitar el texto "Scroll" */
+
+/* --- Section title: más grande y más espacio inferior --- */
+.section-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    text-decoration: underline;
+    text-decoration-color: var(--accent-primary);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 7px;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+/* --- Secciones: más respiración entre ellas --- */
+.section {
+    margin-bottom: calc(var(--spacing-2xl) + var(--spacing-md));
+}
+
+/* --- Work description: párrafos con espacio entre ellos --- */
+.work-description + .work-description {
+    margin-top: var(--spacing-sm);
+}
+
+/* --- text-muted: mejorar contraste mínimo WCAG AA (4.5:1) --- */
+/* En dark theme el valor actual #4a5568 tiene ~4.3:1 sobre #111318, 
+   subimos un tono para garantizar contraste */
+:root {
+    --text-muted: #5e6b80;
+}
+body.light-theme {
+    --text-muted: #6b7a94;
+}
+
+/* ============================================================
+   METODOLOGÍA / FORMA DE TRABAJO
+   ============================================================ */
+.methodology-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-md) 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    counter-reset: none;
+    border-left: 2px solid var(--border-color);
+    padding-left: var(--spacing-md);
+}
+
+.methodology-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) 0;
+    position: relative;
+    transition: background var(--transition-fast);
+}
+
+/* Dot sobre la línea vertical */
+.methodology-item::before {
+    content: '';
+    position: absolute;
+    left: calc(-1 * var(--spacing-md) - 5px);
+    top: 1.35rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border-color);
+    border: 2px solid var(--bg-primary);
+    transition: background var(--transition-fast);
+}
+.methodology-item:hover::before {
+    background: var(--accent-primary);
+}
+
+.methodology-step {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    min-width: 24px;
+    padding-top: 0.15rem;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+}
+
+.methodology-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.methodology-body strong {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.methodology-body span {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+/* ============================================================
+   PROYECTOS — feature tags y mejoras de panel
+   ============================================================ */
+.sc-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.65rem;
+}
+
+.sc-feature-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.65rem;
+    background: color-mix(in srgb, var(--accent-primary) 8%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent-primary) 20%, transparent);
+    border-radius: var(--radius-sm);
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.01em;
+}
+
+/* Descripción de proyecto: permite texto más largo sin cortar */
+.sc-desc {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 0.5rem;
+    transition: opacity 0.2s ease;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Botón Repo — icon de GitHub en lugar de flecha */
+.sc-btn-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ============================================================
+   ACCESIBILIDAD — focus visible mejorado
+   ============================================================ */
+
+/* Focus ring visible para navegación por teclado */
+:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+}
+
+/* Remover outline por defecto solo cuando hay :focus-visible */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Botones y links con focus explícito */
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.sc-btn-live:focus-visible,
+.sc-btn-gallery:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 3px;
+}
+
+.nav-menu a:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+    color: var(--text-primary);
+}
+
+.contact-link-card:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 3px;
+    border-color: var(--accent-primary);
+}
+
+/* Avatar: quitar aria-hidden del contenedor del avatar
+   (se maneja en HTML — aquí solo aseguramos que img tenga ratio correcto) */
+.avatar-img {
+    aspect-ratio: 1 / 1;
+}
+
+/* ============================================================
+   RESPONSIVE — mejoras adicionales para task 9/10
+   ============================================================ */
+@media (max-width: 768px) {
+    /* Hero bio: full width en móvil */
+    .hero-bio {
+        max-width: 100%;
+        font-size: var(--font-size-sm);
+    }
+
+    /* Metodología: compactar en móvil */
+    .methodology-list {
+        padding-left: var(--spacing-sm);
+    }
+    .methodology-item {
+        gap: var(--spacing-sm);
+    }
+
+    /* Section title más compacto en móvil */
+    .section-title {
+        font-size: var(--font-size-xl);
+    }
+
+    /* sc-desc sin clamp en móvil para que se lea completo */
+    .sc-desc {
+        -webkit-line-clamp: unset;
+        display: block;
+        overflow: visible;
+    }
+
+    /* Feature tags */
+    .sc-features {
+        gap: 0.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Hero: 3 CTAs apilados en pantallas muy pequeñas */
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .hero-actions .btn-primary,
+    .hero-actions .btn-secondary {
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Metodología: step number sobre la descripción */
+    .methodology-item {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}

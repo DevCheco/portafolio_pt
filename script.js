@@ -55,11 +55,17 @@ const navMenu = document.getElementById('navMenu');
 
 mobileMenuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
+    const overlay = document.getElementById('navOverlay');
+    const isOpen = navMenu.classList.contains('active');
     const icon = mobileMenuToggle.querySelector('i');
-    if (navMenu.classList.contains('active')) {
+    if (isOpen) {
         icon.classList.replace('fa-bars', 'fa-times');
+        mobileMenuToggle.setAttribute('aria-expanded', 'true');
+        if (overlay) { overlay.classList.add('active'); overlay.setAttribute('aria-hidden', 'false'); }
     } else {
         icon.classList.replace('fa-times', 'fa-bars');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        if (overlay) { overlay.classList.remove('active'); overlay.setAttribute('aria-hidden', 'true'); }
     }
 });
 
@@ -69,8 +75,24 @@ navMenu.querySelectorAll('a').forEach(link => {
         navMenu.classList.remove('active');
         const icon = mobileMenuToggle.querySelector('i');
         icon.classList.replace('fa-times', 'fa-bars');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        const overlay = document.getElementById('navOverlay');
+        if (overlay) { overlay.classList.remove('active'); overlay.setAttribute('aria-hidden', 'true'); }
     });
 });
+
+// Close mobile menu when overlay is clicked
+const navOverlay = document.getElementById('navOverlay');
+if (navOverlay) {
+    navOverlay.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        navOverlay.classList.remove('active');
+        navOverlay.setAttribute('aria-hidden', 'true');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        const icon = mobileMenuToggle.querySelector('i');
+        icon.classList.replace('fa-times', 'fa-bars');
+    });
+}
 
 // ============================================================
 //  SMOOTH SCROLL
@@ -136,7 +158,7 @@ const closeModal = document.querySelector('.close-modal');
 const prevSlideBtn = document.getElementById('prevSlideBtn');
 const nextSlideBtn = document.getElementById('nextSlideBtn');
 
-// Project Data
+// Project Data — gallery images
 const projectData = {
     client1: {
         images: [
@@ -145,13 +167,6 @@ const projectData = {
             'assets/proyecto_1_3.webp'
         ],
         title: 'E-commerce Multivendedor'
-    },
-    personal1: {
-        images: [
-            'assets/placeholder.jpg',
-            'assets/placeholder.jpg'
-        ],
-        title: 'Portfolio Minimalista'
     }
 };
 
@@ -222,59 +237,59 @@ window.changeSlide = changeSlide;
 const showcaseProjects = {
     client1: {
         title: 'E-commerce Multivendedor',
-        desc: 'Marketplace modular con gestión de productos, usuarios y compras. Arquitectura limpia con PHP, MySQL y API REST. Escalable e ideal para comercio electrónico educativo.',
-        tech: 'PHP · MySQL · JS',
-        type: 'Cliente',
-        rating: '4.8',
+        desc: 'Desarrollé una plataforma de comercio electrónico para un cliente local que necesitaba gestionar productos, usuarios y pedidos desde un panel administrativo. Diseñé la base de datos relacional, construí el backend con PHP y MySQL, implementé autenticación por sesiones y desarrollé la interfaz con Bootstrap y JavaScript. Mi participación fue completa: análisis de requisitos, diseño de BD, desarrollo backend y frontend, y despliegue.',
+        tech: 'PHP · MySQL · JS · Bootstrap',
+        type: 'Freelance',
         stack: 'Full Stack',
         year: '2024',
-        users: '200+ usuarios',
-        url: 'localhost/ecommerce',
+        users: 'Cliente real',
+        url: 'github.com/DevCheco',
         image: 'assets/proyecto_1.webp',
-        liveLink: '#',
+        liveLink: 'https://github.com/DevCheco',
+        features: ['Panel administrativo', 'Gestión de inventario', 'Autenticación por sesiones', 'API REST interna'],
         galleryKey: 'client1'
-    },
-    personal1: {
-        title: 'Portfolio Minimalista',
-        desc: 'Portafolio personal enfocado en rendimiento, accesibilidad y diseño limpio. Incluye tema oscuro/claro, teclado interactivo y animaciones de scroll.',
-        tech: 'HTML · CSS · JS',
-        type: 'Personal',
-        rating: '5.0',
-        stack: 'Frontend',
-        year: '2025',
-        users: 'Open Source',
-        url: 'devcheco.github.io/portfolio',
-        image: 'assets/linkedin-foto.webp',
-        liveLink: '#',
-        galleryKey: 'personal1'
     },
     medicontrol: {
         title: 'MediControl',
-        desc: 'Aplicación web de gestión de medicamentos con recordatorios, estadísticas de dosis y autenticación segura. Backend PHP con MySQL.',
+        desc: 'Construí una aplicación web para el seguimiento y control de medicamentos, orientada a personas con tratamientos crónicos. El sistema permite registrar medicamentos, programar recordatorios y consultar el historial de dosis. Implementé la lógica de backend con PHP, diseñé el esquema de base de datos en MySQL y trabajé la interfaz con CSS personalizado.',
         tech: 'PHP · MySQL · CSS',
-        type: 'Personal',
-        rating: '4.6',
+        type: 'Proyecto personal',
         stack: 'Full Stack',
         year: '2025',
-        users: 'Demo',
-        url: 'localhost/medicontrol',
-        image: 'https://placehold.co/800x400/2d2d30/88ccca?text=MediControl',
-        liveLink: '#',
+        users: 'En desarrollo',
+        url: 'github.com/DevCheco/medicontrol',
+        image: 'https://placehold.co/800x400/1a1d24/6c8df5?text=MediControl',
+        liveLink: 'https://github.com/DevCheco',
+        features: ['Registro de medicamentos', 'Programación de recordatorios', 'Historial de dosis', 'Autenticación de usuarios'],
         galleryKey: 'medicontrol'
     },
     thomybot: {
         title: 'ThomyBot AI',
-        desc: 'Chatbot de salud mental entrenado localmente con TensorFlow.js. Detecta intenciones, clasifica emociones y ofrece recursos de crisis con interfaz terapéutica.',
-        tech: 'TensorFlow.js · NLP',
-        type: 'Personal',
-        rating: '4.9',
-        stack: 'IA / ML',
+        desc: 'Desarrollé un asistente virtual de salud mental como proyecto de grado en la UNAD. Integré TensorFlow.js para procesar lenguaje natural directamente en el navegador, entrenando el modelo con datos de interacciones académicas para detectar estados emocionales y ofrecer recursos de apoyo. Participé en el diseño del modelo NLP, la integración con la interfaz web y la evaluación de precisión.',
+        tech: 'TensorFlow.js · NLP · JavaScript',
+        type: 'Proyecto de grado',
+        stack: 'IA / Frontend',
         year: '2024',
-        users: 'En desarrollo',
-        url: 'localhost/thomybot',
-        image: 'https://placehold.co/800x400/202023/88ccca?text=ThomyBot+AI',
-        liveLink: '#',
+        users: 'Proyecto UNAD',
+        url: 'github.com/DevCheco/thomybot',
+        image: 'https://placehold.co/800x400/111318/6c8df5?text=ThomyBot+AI',
+        liveLink: 'https://github.com/DevCheco',
+        features: ['Procesamiento NLP en el navegador', 'Detección de estados emocionales', 'Recursos de apoyo contextual', 'Interfaz conversacional'],
         galleryKey: 'thomybot'
+    },
+    psicoevaluacion: {
+        title: 'Plataforma de Evaluación Psicológica',
+        desc: 'Diseñé y desarrollé una plataforma web para la aplicación de evaluaciones psicológicas estandarizadas dentro del semillero de investigación JOKMAH en la UNAD. La plataforma permitía a estudiantes completar cuestionarios en línea y a los administradores consultar resultados. Implementé el frontend con React, el backend con Node.js y la base de datos con MySQL.',
+        tech: 'React · Node.js · MySQL',
+        type: 'Investigación UNAD',
+        stack: 'Full Stack',
+        year: '2023',
+        users: 'Semillero JOKMAH',
+        url: 'github.com/DevCheco',
+        image: 'https://placehold.co/800x400/111318/e0457f?text=PsicoEvaluación',
+        liveLink: 'https://github.com/DevCheco',
+        features: ['Cuestionarios dinámicos', 'Panel de resultados', 'Autenticación por roles', 'Exportación de datos'],
+        galleryKey: 'psicoevaluacion'
     }
 };
 
@@ -288,6 +303,7 @@ function switchShowcaseProject(projectId) {
 
     document.querySelectorAll('.sc-nav-item').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.project === projectId);
+        btn.setAttribute('aria-pressed', btn.dataset.project === projectId ? 'true' : 'false');
     });
 
     const img = document.getElementById('scScreenImg');
@@ -295,9 +311,10 @@ function switchShowcaseProject(projectId) {
         img.classList.add('sc-transitioning');
         setTimeout(() => {
             img.src = project.image;
+            img.alt = `Vista previa del proyecto ${project.title}`;
             img.onerror = function () {
                 this.onerror = null;
-                this.src = `https://placehold.co/800x400/2d2d30/FFF?text=${encodeURIComponent(project.title)}`;
+                this.src = `https://placehold.co/800x400/1a1d24/6c8df5?text=${encodeURIComponent(project.title)}`;
             };
             img.classList.remove('sc-transitioning');
         }, 300);
@@ -324,6 +341,14 @@ function switchShowcaseProject(projectId) {
         if (stackStat) stackStat.textContent = project.stack;
         if (yearStat) yearStat.textContent = project.year;
         if (usersStat) usersStat.textContent = project.users;
+
+        // Update feature tags
+        const featuresEl = document.getElementById('scFeatures');
+        if (featuresEl && project.features) {
+            featuresEl.innerHTML = project.features
+                .map(f => `<span class="sc-feature-tag">${f}</span>`)
+                .join('');
+        }
     }, 200);
 
     const popBadge = (badgeEl, textEl, value) => {
@@ -333,7 +358,6 @@ function switchShowcaseProject(projectId) {
         textEl.textContent = value;
         badgeEl.classList.add('pop');
     };
-    popBadge(document.getElementById('scBadgeRating'), document.getElementById('scRatingText'), project.rating);
     popBadge(document.getElementById('scBadgeTech'), document.getElementById('scTechText'), project.tech);
     popBadge(document.getElementById('scBadgeType'), document.getElementById('scTypeText'), project.type);
 }
@@ -344,7 +368,7 @@ function openShowcaseGallery(projectId) {
     if (projectData && projectData[project.galleryKey]) {
         openGallery(project.galleryKey);
     } else {
-        window.open(project.image, '_blank');
+        // No gallery available — nothing to open
     }
 }
 
@@ -365,128 +389,6 @@ if (scGalleryBtn) {
 
 window.currentShowcaseProject = currentShowcaseProject;
 window.openShowcaseGallery = openShowcaseGallery;
-
-// ============================================================
-//  SOFT SKILLS SHOWCASE (.ss-* system) — idle-deferred
-// ============================================================
-const softSkillCategories = {
-    comunicacion: {
-        title: 'Comunicación e Interacción',
-        desc: 'Habilidades para transmitir ideas con claridad, escuchar activamente y conectar con las personas.',
-        icon: 'fas fa-comments',
-        count: 6,
-        skills: [
-            { icon: 'fas fa-comment-dots', name: 'Comunicación Efectiva', desc: 'Transmito ideas técnicas de forma clara y precisa.' },
-            { icon: 'fas fa-ear-listen', name: 'Escucha Activa', desc: 'Comprendo requisitos y feedback sin interrumpir.' },
-            { icon: 'fas fa-heart', name: 'Empatía', desc: 'Comprendo las necesidades y emociones del usuario.' },
-            { icon: 'fas fa-handshake', name: 'Negociación', desc: 'Encuentro soluciones beneficiosas para todas las partes.' },
-            { icon: 'fas fa-microphone', name: 'Presentaciones Técnicas', desc: 'Explico conceptos a audiencias diversas con confianza.' },
-            { icon: 'fas fa-file-alt', name: 'Documentación Técnica', desc: 'Documento código y procesos de forma clara y estructurada.' }
-        ]
-    },
-    liderazgo: {
-        title: 'Liderazgo y Colaboración',
-        desc: 'Capacidad para guiar equipos, colaborar eficazmente y construir un ambiente de trabajo positivo.',
-        icon: 'fas fa-users',
-        count: 5,
-        skills: [
-            { icon: 'fas fa-users-cog', name: 'Trabajo en Equipo', desc: 'Colaboro efectivamente con equipos multidisciplinarios.' },
-            { icon: 'fas fa-crown', name: 'Liderazgo', desc: 'Guío equipos hacia objetivos comunes con claridad.' },
-            { icon: 'fas fa-globe', name: 'Colaboración Remota', desc: 'Trabajo efectivamente en equipos distribuidos.' },
-            { icon: 'fas fa-chalkboard-teacher', name: 'Mentoría', desc: 'Comparto conocimientos y apoyo el crecimiento del equipo.' },
-            { icon: 'fas fa-balance-scale', name: 'Resolución de Conflictos', desc: 'Resuelvo desacuerdos de forma constructiva y diplomática.' }
-        ]
-    },
-    pensamiento: {
-        title: 'Pensamiento Estratégico',
-        desc: 'Capacidad analítica y creativa para resolver problemas complejos y pensar a largo plazo.',
-        icon: 'fas fa-lightbulb',
-        count: 8,
-        skills: [
-            { icon: 'fas fa-lightbulb', name: 'Resolución de Problemas', desc: 'Analizo y resuelvo desafíos técnicos con metodología.' },
-            { icon: 'fas fa-chess', name: 'Pensamiento Crítico', desc: 'Evalúo desde múltiples perspectivas antes de decidir.' },
-            { icon: 'fas fa-chart-bar', name: 'Pensamiento Analítico', desc: 'Descompongo problemas complejos en partes manejables.' },
-            { icon: 'fas fa-paint-brush', name: 'Creatividad', desc: 'Propongo soluciones innovadoras y fuera de lo convencional.' },
-            { icon: 'fas fa-magic', name: 'Innovación', desc: 'Busco mejores formas de hacer las cosas continuamente.' },
-            { icon: 'fas fa-gavel', name: 'Toma de Decisiones', desc: 'Decido con criterio bajo incertidumbre y presión.' },
-            { icon: 'fas fa-compass', name: 'Visión Estratégica', desc: 'Pienso a largo plazo y anticipo consecuencias futuras.' },
-            { icon: 'fas fa-search-plus', name: 'Atención al Detalle', desc: 'Cuido la calidad y consistencia en cada entregable.' }
-        ]
-    },
-    gestion: {
-        title: 'Gestión y Eficiencia',
-        desc: 'Habilidades para organizar, priorizar y ejecutar trabajo de forma eficiente y autónoma.',
-        icon: 'fas fa-rocket',
-        count: 7,
-        skills: [
-            { icon: 'fas fa-hourglass-half', name: 'Gestión del Tiempo', desc: 'Priorizo tareas y cumplo deadlines bajo presión.' },
-            { icon: 'fas fa-clipboard-check', name: 'Autogestión', desc: 'Organizo mi trabajo independientemente con disciplina.' },
-            { icon: 'fas fa-running', name: 'Proactividad', desc: 'Anticipo necesidades sin esperar instrucciones explícitas.' },
-            { icon: 'fas fa-bullseye', name: 'Orientación a Resultados', desc: 'Me enfoco en lograr objetivos medibles y concretos.' },
-            { icon: 'fas fa-sync', name: 'Adaptabilidad', desc: 'Me adapto ágilmente a nuevas tecnologías y entornos.' },
-            { icon: 'fas fa-spa', name: 'Manejo del Estrés', desc: 'Mantengo la calma y claridad bajo alta presión.' },
-            { icon: 'fas fa-book-reader', name: 'Aprendizaje Continuo', desc: 'Actualizo mis conocimientos constantemente por iniciativa propia.' }
-        ]
-    }
-};
-
-let currentSoftSkillCat = 'comunicacion';
-
-function switchSoftSkillCat(catId) {
-    const cat = softSkillCategories[catId];
-    if (!cat || catId === currentSoftSkillCat) return;
-    currentSoftSkillCat = catId;
-
-    document.querySelectorAll('[data-skill-cat]').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.skillCat === catId);
-    });
-
-    const heroEl = document.getElementById('ssHeroIcon')?.closest('.ss-hero');
-    const iconEl = document.getElementById('ssHeroIcon');
-    const titleEl = document.getElementById('ssCatTitle');
-    const descEl = document.getElementById('ssCatDesc');
-    const countEl = document.getElementById('ssSkillCount');
-    const gridEl = document.getElementById('ssSkillsGrid');
-
-    if (heroEl) {
-        heroEl.classList.remove('animating');
-        void heroEl.offsetWidth;
-        heroEl.classList.add('animating');
-    }
-
-    if (titleEl) titleEl.style.opacity = '0';
-    if (descEl) descEl.style.opacity = '0';
-
-    setTimeout(() => {
-        if (iconEl) iconEl.innerHTML = `<i class="${cat.icon}"></i>`;
-        if (titleEl) { titleEl.textContent = cat.title; titleEl.style.opacity = '1'; }
-        if (descEl) { descEl.textContent = cat.desc; descEl.style.opacity = '1'; }
-        if (countEl) countEl.textContent = `${cat.count} habilidades`;
-    }, 180);
-
-    if (gridEl) {
-        gridEl.classList.add('fading');
-        setTimeout(() => {
-            gridEl.innerHTML = cat.skills.map((s, i) =>
-                `<div class="ss-skill-card" style="animation-delay:${i * 45}ms">
-                    <i class="${s.icon}"></i>
-                    <strong>${s.name}</strong>
-                    <span>${s.desc}</span>
-                </div>`
-            ).join('');
-            gridEl.classList.remove('fading');
-        }, 220);
-    }
-}
-
-// Wire up soft-skills sidebar — event delegation
-const ssNavEl = document.querySelector('#soft-skills .sc-nav');
-if (ssNavEl) {
-    ssNavEl.addEventListener('click', (e) => {
-        const btn = e.target.closest('[data-skill-cat]');
-        if (btn) switchSoftSkillCat(btn.dataset.skillCat);
-    });
-}
 
 // ============================================================
 //  ACCORDION (if still present)
