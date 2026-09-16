@@ -41,37 +41,41 @@ mobileMenuToggle.addEventListener('click', () => {
         icon.classList.replace('fa-bars', 'fa-times');
         mobileMenuToggle.setAttribute('aria-expanded', 'true');
         if (overlay) { overlay.classList.add('active'); overlay.setAttribute('aria-hidden', 'false'); }
+        document.body.style.overflow = 'hidden';   // bloquea scroll del fondo
     } else {
         icon.classList.replace('fa-times', 'fa-bars');
         mobileMenuToggle.setAttribute('aria-expanded', 'false');
         if (overlay) { overlay.classList.remove('active'); overlay.setAttribute('aria-hidden', 'true'); }
+        document.body.style.overflow = '';
     }
 });
 
+// Helper para cerrar el menú y restaurar el scroll
+function closeMenu() {
+    navMenu.classList.remove('active');
+    const icon = mobileMenuToggle.querySelector('i');
+    icon.classList.replace('fa-times', 'fa-bars');
+    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+    const overlay = document.getElementById('navOverlay');
+    if (overlay) { overlay.classList.remove('active'); overlay.setAttribute('aria-hidden', 'true'); }
+    document.body.style.overflow = '';
+}
+
 // Close mobile menu on nav link click
 navMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        const icon = mobileMenuToggle.querySelector('i');
-        icon.classList.replace('fa-times', 'fa-bars');
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-        const overlay = document.getElementById('navOverlay');
-        if (overlay) { overlay.classList.remove('active'); overlay.setAttribute('aria-hidden', 'true'); }
-    });
+    link.addEventListener('click', closeMenu);
 });
 
 // Close mobile menu when overlay is clicked
 const navOverlay = document.getElementById('navOverlay');
 if (navOverlay) {
-    navOverlay.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navOverlay.classList.remove('active');
-        navOverlay.setAttribute('aria-hidden', 'true');
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-        const icon = mobileMenuToggle.querySelector('i');
-        icon.classList.replace('fa-times', 'fa-bars');
-    });
+    navOverlay.addEventListener('click', closeMenu);
 }
+
+// Close mobile menu on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) closeMenu();
+});
 
 // ============================================================
 //  SMOOTH SCROLL
