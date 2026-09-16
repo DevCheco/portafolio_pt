@@ -1,27 +1,6 @@
 // ============================================================
-//  AUDIO — singleton AudioContext (created once, reused)
+//  THEME TOGGLE
 // ============================================================
-let _audioCtx = null;
-
-function playKeyboardSound() {
-    if (!_audioCtx) {
-        _audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    }
-    const oscillator = _audioCtx.createOscillator();
-    const gainNode = _audioCtx.createGain();
-
-    const baseFrequency = 800 + Math.random() * 200;
-    oscillator.frequency.setValueAtTime(baseFrequency, _audioCtx.currentTime);
-    oscillator.frequency.exponentialRampToValueAtTime(baseFrequency * 0.5, _audioCtx.currentTime + 0.05);
-
-    gainNode.gain.setValueAtTime(0.3, _audioCtx.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.01, _audioCtx.currentTime + 0.05);
-
-    oscillator.connect(gainNode);
-    gainNode.connect(_audioCtx.destination);
-    oscillator.start(_audioCtx.currentTime);
-    oscillator.stop(_audioCtx.currentTime + 0.05);
-}
 
 // ============================================================
 //  THEME TOGGLE
@@ -132,19 +111,7 @@ document.querySelectorAll('.section').forEach(section => {
     observer.observe(section);
 });
 
-// ============================================================
-//  KEYBOARD KEYS — event delegation (one listener instead of 60+)
-// ============================================================
-const keyboardContainer = document.querySelector('.keyboard-container');
-if (keyboardContainer) {
-    keyboardContainer.addEventListener('click', (e) => {
-        const key = e.target.closest('.keyboard-key');
-        if (!key) return;
-        playKeyboardSound();
-        key.classList.add('key-pressed');
-        setTimeout(() => key.classList.remove('key-pressed'), 100);
-    });
-}
+// (keyboard removed — no interactive keyboard in current version)
 
 // ============================================================
 //  GALLERY MODAL

@@ -2126,3 +2126,98 @@ body.light-theme {
         gap: 0.25rem;
     }
 }
+
+/* ============================================================
+   SKILLS — grid de categorías
+   Reemplaza el teclado interactivo. Sin barras de progreso.
+   ============================================================ */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+/* La categoría "Conceptos" ocupa el ancho completo */
+.skill-category--wide {
+    grid-column: 1 / -1;
+}
+
+.skill-category {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    transition: border-color var(--transition-fast);
+}
+.skill-category:hover {
+    border-color: var(--border-accent);
+}
+
+.skill-category-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.skill-category-header i {
+    font-size: 0.9rem;
+    color: var(--accent-primary);
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
+}
+.skill-category-header h3 {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.01em;
+    line-height: 1;
+}
+
+.skill-tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.skill-tags li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.7rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1;
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+.skill-tags li:hover {
+    color: var(--text-primary);
+    border-color: var(--accent-primary);
+}
+.skill-tags li i {
+    font-size: 0.8rem;
+    color: var(--accent-primary);
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+.skill-tags li:hover i {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    .skill-category--wide {
+        grid-column: 1;
+    }
+}
