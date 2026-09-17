@@ -2509,3 +2509,16 @@ body.light-theme {
 .contact-link-label {
     font-weight: 500;
 }
+
+/* Habilidades blandas — borde y tono ligeramente diferente al técnico */
+.skill-category--soft .skill-category-header i {
+    color: var(--accent-secondary);
+}
+.skill-category--soft .skill-tags li i {
+    color: var(--accent-secondary);
+    opacity: 0.75;
+}
+.skill-category--soft .skill-tags li:hover {
+    color: var(--text-primary);
+    border-color: var(--accent-secondary);
+}
