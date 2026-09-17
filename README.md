@@ -2,7 +2,7 @@
 
 Portafolio personal desarrollado con HTML, CSS y JavaScript vanilla. Muestra mi formación, experiencia, proyectos y habilidades como Ingeniero de Sistemas egresado de la UNAD y técnico en Programación de Software del SENA.
 
-**Sitio Web:** [checodev.com](portafolio-pt.vercel.app)
+
 
 ---
 
